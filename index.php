@@ -10,8 +10,8 @@
    /*請在這裹撰寫你的CSS*/ 
     body {
     text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
-    background-image: url('./images/background.PNG'); /*設定背景圖片*/
-    /*background-size: cover; 使圖片覆蓋整個背景*/
+    background-image: url('./images/5.jfif'); /*設定背景圖片*/
+    background-size: cover;/*使圖片覆蓋整個背景*/
     background-position: center; /* 圖片置中 */
     background-repeat: no-repeat; /* 不重複顯示背景圖片 */
     background-attachment: fixed; /* 固定背景圖不隨捲動 */
@@ -29,7 +29,7 @@
         /* border-collapse:collapse; 使邊框合併 */
         margin:auto;        
         /* background: rgb(<?rand(50,250);?>,<?rand(50,250);?>,<?rand(50,250);?>); */
-        background-color: rgba(255, 255, 255, 0.9); /* 增加日曆的白色半透明背景 */
+        background-color: rgba(255, 255, 255, 0.8); /* 增加日曆的白色半透明背景 */
         border-radius: 8px;
     }
 
@@ -64,7 +64,7 @@
     .nav{
         width: 700px;
         margin:auto;
-        background-color: rgba(255, 255, 255, 0.8); /* 加入白色半透明背景以強調選單 */
+        background-color: rgba(255, 255, 255, 0.5); /* 加入白色半透明背景以強調選單 */
         border-radius: 8px;
         padding: 2px;
     }
@@ -83,7 +83,7 @@
 
       /* 設定按鈕的樣式 */
     .today-link {
-    padding: 10px 45px 10px; /* 按鈕的內邊距 */
+    padding: 8px 40px 8px; /* 按鈕的內邊距 */
     background-color: rgba(255, 199, 95, 0.8); 
     /*background: rgba(255, 150, 113, 0.5); 按鈕的背景顏色 */
     color: white; /* 按鈕的文字顏色 */
@@ -155,8 +155,10 @@
   </style>
 </head>
 <body>
-<h1>.⁎ .⁂ .⁎˙ ⁑ * 萬  年  曆 * ⁑ ˙⁎. ⁂. ⁎.</h1>   
-<br>
+<h1>.⁎ .⁂ .⁎˙ ⁑ * 萬  年  曆 * ⁑ ˙⁎. ⁂. ⁎.  </h1> 
+ <!-- <h2> (๑◕ܫ◕๑)ฅ . ฅ (๑•̀ ω •́๑) ฅ ʕ•͡ᴥ•ʔ ✿●  </h2> -->
+<br>  
+<br> 
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/  
 if(isset($_GET['month'])){
@@ -238,7 +240,7 @@ $holidays = [
         </td>
         <td class="today-button">
             <a href="index.php?year=<?php echo date('Y'); ?>&month=<?php echo date('m'); ?>" class="today-link">
-            今天
+            T♥DAY
             </a>        
         </td>
         <td style='text-align:right'>
@@ -252,13 +254,13 @@ $holidays = [
 <table>
 <tr>
     <!-- <td></td> -->
-    <th style='color:red'>SUN &nbsp; 日</th>
+    <th style='color:red'>✿ SUN 日</th>
     <th>MON &nbsp; 一</th>
     <th>TUE &nbsp; 二</th>
     <th>WED &nbsp; 三</th>
     <th>THU &nbsp; 四</th>
     <th>FRI &nbsp; 五</th>
-    <th style='color:red'>SAT &nbsp; 六</th>
+    <th style='color:red'>SAT 六 ✿</th>
 </tr>
 
 <?php
