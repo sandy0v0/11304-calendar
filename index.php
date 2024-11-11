@@ -10,7 +10,7 @@
    /*請在這裹撰寫你的CSS*/ 
    body {
     text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
-    background-image: url('/images/background.PNG'); /*設定背景圖片*/
+    background-image: url('../11304-calendar-sandy0v0/images/background.PNG'); /*設定背景圖片*/
     /* background-size: cover; 使圖片覆蓋整個背景 */
     background-position: center; /* 圖片置中 */
     background-repeat: no-repeat; /* 不重複顯示背景圖片 */
