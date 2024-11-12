@@ -92,6 +92,11 @@
     border-radius: 20px; /* 按鈕的圓角效果 */
     }
 
+    .today-link:hover {
+        background-color:lightcoral;
+
+    }
+
     a {
       text-decoration: none;
       font-weight:bolder;
