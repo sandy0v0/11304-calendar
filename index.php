@@ -91,18 +91,10 @@
     border-radius: 20px; /* 按鈕的圓角效果 */
     }
 
-    .today-link:hover {
-    background-color: lightcoral;
-    }
-
     a {
       text-decoration: none;
       font-weight:bolder;
       color: #98D98E;
-    }
-
-    .nextMonth:hover {
-    color: rgba(255, 199, 95, 0.8);
     }
 
     .sp-date {
@@ -140,11 +132,6 @@
         color: white;
         text-decoration: none;
     }
-
-    .nextYear:hover {
-    background: rgba(255, 150, 113, 0.5);
-    }
-
 
     /* 調整月份的字體大小 */
     .month {
@@ -248,7 +235,7 @@ $holidays = [
         </tr>
 
         <tr>
-        <td class="nextMonth" style='text-align:left'>
+        <td style='text-align:left'>
             <a href="index.php?year=<?=$prevYear;?>&month=<?=$prevMonth;?>">◄</a>
         </td>
         <td class="today-button">
@@ -256,7 +243,7 @@ $holidays = [
             T♥DAY
             </a>        
         </td>
-        <td class="nextMonth" style='text-align:right'>
+        <td style='text-align:right'>
             <a href="index.php?year=<?=$nextYear;?>&month=<?=$nextMonth;?>">►</a>
         </td>
     </tr>
