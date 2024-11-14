@@ -40,7 +40,7 @@
     }
 
     td {
-        width: 100px;
+        width: 140px;
         height: 50px;
         font-weight: bold;
         padding: 10px 10px; /* 單元格內的邊距 */
@@ -48,6 +48,9 @@
         border:2px solid #999; /* 邊框顏色 */
         border-radius: 25%;  /* 使日期框變圓形 */
         font-size: 22px;  /* 調整日期框字體大小 */
+        transition: transform 0.3s ease, background-color 0.3s ease;  /*添加動畫效果*/
+        cursor: pointer;
+            /* 指標變為手形 */ 
     }
     .holiday {
         background: pink; /* 假日的背景顏色 */
@@ -94,14 +97,44 @@
 
     .today-link:hover {
         background-color:lightcoral;
-
+        
     }
 
-    a {
+    /* a {
       text-decoration: none;
       font-weight:bolder;
       color: #98D98E;
+    } */
+
+    /* 下一個月按鈕的基本樣式 */
+    .nextMonth {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-decoration: none;
+    font-weight: bold;
+    /* transition: transform 0.3s ease, background-color 0.3s ease;  添加動畫效果 */
     }
+
+    
+    /* 滑鼠懸停在按鈕上的效果 */
+    .nextMonth:hover {
+    color: #68BE8D;
+    transform: scale(1.5); /* 放大效果 */
+    }
+
+    .nextMonth a {
+    color: #98D98E;
+    text-decoration: none;
+    }
+
+    /* a:hover {
+        padding: 15px 40px;
+        color: #68BE8D;
+    } */
 
     .sp-date {
     font-size: 12px; /* 特定日期的文字大小 */
@@ -245,7 +278,7 @@ $holidays = [
         </tr>
 
         <tr>
-        <td style='text-align:left'>
+        <td class="nextMonth">
             <a href="index.php?year=<?=$prevYear;?>&month=<?=$prevMonth;?>">◄</a>
         </td>
         <td class="today-button">
@@ -253,7 +286,7 @@ $holidays = [
             T♥DAY
             </a>        
         </td>
-        <td style='text-align:right'>
+        <td class="nextMonth">
             <a href="index.php?year=<?=$nextYear;?>&month=<?=$nextMonth;?>">►</a>
         </td>
     </tr>
