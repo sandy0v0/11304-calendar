@@ -49,8 +49,7 @@
         border-radius: 25%;  /* 使日期框變圓形 */
         font-size: 22px;  /* 調整日期框字體大小 */
         transition: transform 0.3s ease, background-color 0.3s ease;  /*添加動畫效果*/
-        cursor: pointer;
-            /* 指標變為手形 */ 
+        cursor: pointer; /* 指標變為手形 */ 
     }
     .holiday {
         background: pink; /* 假日的背景顏色 */
@@ -180,13 +179,14 @@
     .month {
         color: white;
         font-size: 30px;
-        /* background-color: lightblue; */
-        background: rgba(255, 150, 113, 0.5);
+        background-color: rgba(255, 150, 113, 0.5);
         border-radius: 20px;
-        padding: 10px 20px;
+        padding: 40px 20px;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+        cursor: pointer; /* 指標變為手形 */ 
+        border: none; /* 取消邊框 */
+    }    
 
     .year {
         font-size: 36px; 
@@ -195,6 +195,55 @@
         text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
     }
     
+/* 機器手臂的容器 */
+.robot-arm {
+    position: fixed;
+    top: 40%; /* 將機器手臂位置 */
+    right: 420px;  /*從右側出現 */
+    width: 200px;
+    height: 220px;
+    transform: translateY(-50%); /* 垂直居中 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: move-arm 3s infinite ease-in-out; /* 添加晃動動畫 */
+    
+}
+
+/* 機器手臂的基礎 */
+.robot-arm .base {
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 150, 113, 0.5);
+    border-radius: 50%;
+    position: relative;
+    font-size: 20px;
+    color: white; /* 今天的文字顏色 */
+    font-weight:bolder; /* 加粗字體 */
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* 手臂的延展部分 */
+.robot-arm .arm {
+    width: 50px;
+    height: 85px;
+    background-color: rgba(255, 150, 113, 0.5);
+    border-radius: 10px;
+    position: relative;
+    top: -1px;
+}
+
+
+/* 手臂的動畫 */
+@keyframes move-arm {
+    0%, 100% {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-50%) rotate(15deg); /* 手臂擺動角度 */
+    }
+}
+
   </style>
 </head>
 <body>
@@ -263,13 +312,23 @@ $holidays = [
 <div class='nav'>
     <table style="width:100%">
         <tr>
-            <td class="month" rowspan="2" style="font-size: 36px;">
-                <?php echo " {$month}月";?>
-            </td>      
+            <td rowspan="2">
+                <form action="index.php" method="get">
+                <input type="hidden" name="year" value="<?= $year; ?>">
+                <select name="month" class="month" onchange="this.form.submit()">
+                    <?php for ($m = 1; $m <= 12; $m++): ?>
+                        <option value="<?= $m; ?>" <?= $month == $m ? 'selected' : ''; ?>>
+                            <?= $m; ?> 月
+                        </option>
+                    <?php endfor; ?>
+                </select>
+                </form>
+            </td>
+
             <td class="nextYear">
                 <a href="index.php?year=<?=$prevYearMonth;?>&month=<?=$month;?>">◄◄</a>                              
             </td>
-            <td class="year" style="font-size: 36px;">
+            <td class="year" onclick="alert('✿ (๑◕ܫ◕๑)ฅ 感恩的心 ♡ 年年開心✧*｡٩(ˊᗜˋ*)و✧*｡ ✿')" style="font-size: 36px;">
                 <?php echo "{$year}年" ;?>
             </td>
             <td class="nextYear">
@@ -290,8 +349,8 @@ $holidays = [
             <a href="index.php?year=<?=$nextYear;?>&month=<?=$nextMonth;?>">►</a>
         </td>
     </tr>
-
-    </table>
+    
+    </table>       
 </div>
 
 <table>
@@ -306,6 +365,10 @@ $holidays = [
     <th style='color:red'>SAT 六 ✿</th>
 </tr>
 
+<div class="robot-arm">
+        <div class="base"><br>來碗<br>🐔soup<br>ヽ(⚲□⚲)ﾉﾟ</div>
+        <div class="arm"></div>
+    </div>
 <?php
 
  // 計算當月的第一天
@@ -355,6 +418,14 @@ for($i=0;$i<6;$i++){
 ?>
 
 </table>
+
+
+
+
   
+
+
+
+
 </body>
 </html>
