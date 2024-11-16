@@ -51,6 +51,14 @@
         transition: transform 0.3s ease, background-color 0.3s ease;  /*添加動畫效果*/
         cursor: pointer; /* 指標變為手形 */ 
     }
+
+    td:hover {
+    border: 2px solid crimson;
+    color: crimson;
+    border-radius: 20px;
+    transform: scale(1.05);
+    }
+
     .holiday {
         background: pink; /* 假日的背景顏色 */
         color: red; /* 假日的文字顏色 */      
@@ -169,6 +177,7 @@
 
     .nextYear:hover {
     background-color: rgba(255, 150, 113, 0.5);
+    border-radius: 50px;
     }
 
     /* 移除底線效果 */
@@ -180,10 +189,10 @@
     /* 調整月份的字體大小 */
     .month {
         color: white;
-        font-size: 30px;
+        font-size: 33px;
         background-color: rgba(255, 150, 113, 0.5);
         border-radius: 20px;
-        padding: 40px 20px;
+        padding: 42px 20px;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         cursor: pointer; /* 指標變為手形 */ 
