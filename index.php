@@ -94,8 +94,10 @@
     border-radius: 20px; /* 按鈕的圓角效果 */
     }
 
-    .today-link:hover {
+    .today-link:hover,
+    .robot-arm .base:hover {
         background-color:lightcoral;
+        transform: scale(1.1);
         
     }
 
@@ -195,12 +197,12 @@
         text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
     }
     
-/* 機器手臂的容器 */
-.robot-arm {
+    /* 機器手臂的容器 */
+    .robot-arm {
     position: fixed;
     top: 40%; /* 將機器手臂位置 */
-    right: 420px;  /*從右側出現 */
-    width: 200px;
+    right: 470px;  /*從右側出現 */
+    width: 120px;
     height: 220px;
     transform: translateY(-50%); /* 垂直居中 */
     display: flex;
@@ -208,34 +210,46 @@
     align-items: center;
     animation: move-arm 3s infinite ease-in-out; /* 添加晃動動畫 */
     
-}
+    }
 
-/* 機器手臂的基礎 */
-.robot-arm .base {
-    width: 120px;
-    height: 120px;
+    /* 機器手臂的基礎 */
+    .robot-arm .base {
+    width: 100px;
+    height: 95px;
     background-color: rgba(255, 150, 113, 0.5);
     border-radius: 50%;
     position: relative;
-    font-size: 20px;
+    font-size: 22px;
     color: white; /* 今天的文字顏色 */
     font-weight:bolder; /* 加粗字體 */
     text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    display: inline-block;
 }
+#marquee-container {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    .base a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-/* 手臂的延展部分 */
-.robot-arm .arm {
+    /* 手臂的延展部分 */
+    .robot-arm .arm {
     width: 50px;
-    height: 85px;
+    height: 65px;
     background-color: rgba(255, 150, 113, 0.5);
     border-radius: 10px;
     position: relative;
-    top: -1px;
+    top: -10px;
 }
 
 
-/* 手臂的動畫 */
-@keyframes move-arm {
+    /* 手臂的動畫 */
+    @keyframes move-arm {
     0%, 100% {
         transform: translateY(-50%) rotate(0deg);
     }
@@ -244,12 +258,61 @@
     }
 }
 
-  </style>
+    /*跑馬燈效果 */
+    #marquee-container {
+    margin: 20px auto;
+    width: 70%; /* 調整跑馬燈寬度 */
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+    }
+
+    marquee {
+    color: lightcoral; /* 文字顏色 */
+    font-size: 24px; /* 調整字體大小 */
+    font-weight: bold; /* 加粗字體 */
+    line-height: 1.5; /* 行高 */
+}
+
+
+</style>
 </head>
 <body>
 <h1>.⁎ .⁂ .⁎˙ ⁑ * 萬  年  曆 * ⁑ ˙⁎. ⁂. ⁎.  </h1> 
  <!-- <h2> (๑◕ܫ◕๑)ฅ . ฅ (๑•̀ ω •́๑) ฅ ʕ•͡ᴥ•ʔ ✿●  </h2> -->
-<br>  
+
+<?php
+// 定義跑馬燈訊息
+$marqueeMessages = [
+    "✨種自己的花，愛自己的宇宙，在不完美的生活裡，找到閃亮亮的快樂✧(๑•̀ㅂ•́)و✧✨",
+    "✿ 每個人的花期不同，不必焦慮有人比你提前擁有！ก็ʕ•͡ᴥ•ʔก้ ✿",
+    "遺憾和失去，是我們要面臨的課題，告別比告白還要難！(๑•́︿•̀๑) ",
+    "有人懂你奇奇怪怪，有人陪你可可愛愛 ╭(●╹∀╹●)╯╰(●•◡•●)╮",
+    "他人對你的尊重，從來不是因為你的順從 ((=•오•=))(｡•ㅅ•｡)ﾉ ",
+    "比起被圍觀，悄悄努力或許更踏實！٩(๑•̀ㅂ•́๑)۶",
+    "用心生活，每天都是美好的一天！٩(˶╹ꇴ╹˶)و "
+];
+
+// 隨機選擇一則訊息
+$randomMessage = $marqueeMessages[rand(0, count($marqueeMessages) - 1)];
+
+// 判斷是否觸發按鈕點擊
+if (isset($_GET['update'])) {
+    // 設定固定的新訊息
+    $randomMessage = $marqueeMessages[rand(0, count($marqueeMessages) - 1)];
+} else {
+    // 隨機選擇一則訊息
+    $randomMessage = $marqueeMessages[rand(0, count($marqueeMessages) - 2)];
+}
+?>
+
+<div id="marquee-container">
+    <marquee behavior="scroll" direction="left">
+        <?php echo $randomMessage; ?>
+    </marquee>
+</div>
+
 <br> 
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/  
@@ -309,9 +372,19 @@ $holidays = [
 
 ?>
 
+<?php
+// 生肖對應陣列
+$zodiacs = ["🐭", "🐮", "🐯", "🐰", "🐉", "🐍", "🐴", "🐏", "🐵", "🐓", "🐶", "🐷"];
+
+// 根據年份計算生肖
+$zodiacIndex = ($year - 4) % 12;
+$zodiacName = $zodiacs[$zodiacIndex];
+?>
+
 <div class='nav'>
     <table style="width:100%">
         <tr>
+            <!-- 左方下拉式月份選取 -->
             <td rowspan="2">
                 <form action="index.php" method="get">
                 <input type="hidden" name="year" value="<?= $year; ?>">
@@ -328,8 +401,10 @@ $holidays = [
             <td class="nextYear">
                 <a href="index.php?year=<?=$prevYearMonth;?>&month=<?=$month;?>">◄◄</a>                              
             </td>
-            <td class="year" onclick="alert('✿ (๑◕ܫ◕๑)ฅ 感恩的心 ♡ 年年開心✧*｡٩(ˊᗜˋ*)و✧*｡ ✿')" style="font-size: 36px;">
-                <?php echo "{$year}年" ;?>
+            <td class="year"
+            onclick="alert('⁎˙*✿*.⁎˙ (๑◕ܫ◕๑)ฅ | 感恩的心 (˶╹ꇴ╹˶)♡ 年年開心 | ✧*｡٩(ˊᗜˋ*)و✧*｡ .⁎˙* ✿--查詢年份，請按確定鍵後，點擊【 ◄◄ 】or【 ►► 】--✿')" 
+            style="font-size: 38px;">
+                <?php echo "{$year}年 {$zodiacName}"; ?>
             </td>
             <td class="nextYear">
                 <a href="index.php?year=<?=$nextYearMonth;?>&month=<?=$month;?>">►►</a>    
@@ -366,7 +441,10 @@ $holidays = [
 </tr>
 
 <div class="robot-arm">
-        <div class="base"><br>來碗<br>🐔soup<br>ヽ(⚲□⚲)ﾉﾟ</div>
+        <div class="base">
+            <a href="?update=true">
+                來碗<br>🐔soup<br>ヽ(⚲□⚲)ﾉﾟ
+        </div>
         <div class="arm"></div>
     </div>
 <?php
@@ -418,14 +496,6 @@ for($i=0;$i<6;$i++){
 ?>
 
 </table>
-
-
-
-
-  
-
-
-
 
 </body>
 </html>
