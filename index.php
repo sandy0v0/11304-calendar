@@ -11,7 +11,7 @@
 
     body {
     text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
-    background-image: url('./images/5.jfif'); /*設定背景圖片*/
+    background-image: url('./images/1.jfif'); /*設定背景圖片*/
     background-size: cover;/*使圖片覆蓋整個背景*/
     background-position: center; /* 圖片置中 */
     background-repeat: no-repeat; /* 不重複顯示背景圖片 */
@@ -60,15 +60,15 @@
     }
 
     .holiday {
-        background: pink; /* 假日的背景顏色 */
+        background: pink; 
         color: red; /* 假日的文字顏色 */      
       }
     .grey-text {
         color: #999; /* 非當月日期的文字顏色 */
     }
     .today {
-        background: lightblue; /* 今天的背景顏色 */
-        color: white; /* 今天的文字顏色 */
+        background: lightblue; 
+        color: white; 
         font-weight:bolder; /* 加粗字體 */
         text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
     }
@@ -96,7 +96,7 @@
     .today-link {
     padding: 8px 40px 8px; /* 按鈕的內邊距 */
     background-color: rgba(255, 199, 95, 0.8); 
-    /*background: rgba(255, 150, 113, 0.5); 按鈕的背景顏色 */
+    /*background: rgba(255, 150, 113, 0.5); */
     color: white; /* 按鈕的文字顏色 */
     text-decoration: none; /* 取消超鏈接的下劃線 */
     border-radius: 20px; /* 按鈕的圓角效果 */
@@ -219,7 +219,7 @@
     border-radius: 50%;
     position: relative;
     font-size: 22px;
-    color: white; /* 今天的文字顏色 */
+    color: white; 
     font-weight:bolder; /* 加粗字體 */
     text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -260,7 +260,7 @@
     /*跑馬燈效果 */
     #marquee-container {
     margin: 20px auto;
-    width: 70%; /* 調整跑馬燈寬度 */
+    width: 70%; 
     background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
     border-radius: 10px;
     padding: 5px;
@@ -268,7 +268,7 @@
     }
 
     marquee {
-    color: lightcoral; /* 文字顏色 */
+    color: lightcoral; 
     font-size: 24px; /* 調整字體大小 */
     font-weight: bold; /* 加粗字體 */
     line-height: 1.5; /* 行高 */
@@ -287,8 +287,8 @@
     .left-image {
     /* position: absolute;  固定在畫面左側 */
     position: fixed; /* 固定位置 */
-    bottom: -20px;  /* 距離底部 90px */
-    left: 10px; /* 距離左側 10px */
+    bottom: -10px;  /* 距離底部 90px */
+    left: 25px; /* 距離左側 10px */
     /* top: 50%; 垂直置中 */
     /*left: 0;  靠左對齊 */
     /*transform: translateY(-50%); 調整垂直置中效果 */
@@ -296,7 +296,7 @@
 }
 
 .left-image img {
-    width: 300px; /* 調整圖片寬度 */
+    width: 250px; 
     height: auto; /* 保持圖片比例 */
     border: none; /* 去除邊框 */
     border-radius: 10px; /* 如果需要圓角，視需求調整 */
@@ -618,7 +618,8 @@ $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
 </div>
 
 <div class="left-image">
-    <img src="./images/4.png" alt="左側圖片" />
+    <img src="./images/1-1.png" alt="左側圖片" />
+    <img src="./images/bg-1.png" alt="左側圖片" />
 </div>
 
 
