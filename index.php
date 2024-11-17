@@ -10,21 +10,20 @@
    /*請在這裹撰寫你的CSS*/ 
 
     body {
-    text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
-    background-image: url('./images/1.jfif'); /*設定背景圖片*/
-    background-size: cover;/*使圖片覆蓋整個背景*/
-    background-position: center; /* 圖片置中 */
-    background-repeat: no-repeat; /* 不重複顯示背景圖片 */
-    background-attachment: fixed; /* 固定背景圖不隨捲動 */
+        text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
+        background-image: url('./images/1.jfif'); /*設定背景圖片*/
+        background-size: cover;/*使圖片覆蓋整個背景*/
+        background-position: center; /* 圖片置中 */
+        background-repeat: no-repeat; /* 不重複顯示背景圖片 */
+        background-attachment: fixed; /* 固定背景圖不隨捲動 */
     }
-
-    /* 設定背景上文字的顏色和樣式，以確保在背景圖上清晰可見 */
-    h2 {
+    
+    h2 { /* 最上方抬頭 */
         color: lightcoral;
         text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); /* 添加陰影提高可讀性 */
     }
 
-    table {
+    table { /* 目前 頭一區 / 身體星期標題一區 */
         width: 735px;
         height: 90px;
         /* border-collapse:collapse; 使邊框合併 */
@@ -34,12 +33,12 @@
         border-radius: 8px;
     }
 
-    th {
-    font-size: 18px; /* 調整星期標題的字體大小 */
-    padding: 15px 0; /* 調整星期標題的內邊距 */
+    th { /* 星期標題 */
+        font-size: 18px; /* 字體大小 */
+        padding: 15px 0; /* 內邊距 */
     }
 
-    td {
+    td { /* table 裡面 */
         width: 140px;
         height: 55px;
         font-weight: bold;
@@ -52,27 +51,31 @@
         cursor: pointer; /* 指標變為手形 */ 
     }
 
-    td:hover {
-    border: 2px solid crimson;
-    color: crimson;
-    border-radius: 20px;
-    transform: scale(1.05);
+    td:hover { /*滑鼠滑至日期位置效果設置 */
+        border: 2px solid crimson;
+        color: crimson;
+        border-radius: 20px;
+        transform: scale(1.05);
     }
 
-    .holiday {
+    .holiday { /* 假日(當月) */
         background: pink; 
-        color: red; /* 假日的文字顏色 */      
-      }
-    .grey-text {
-        color: #999; /* 非當月日期的文字顏色 */
+        color: red;       
     }
-    .today {
+      
+    .grey-text { /* 非 當月日期 */
+        color: #999; 
+    }
+
+    .today { /* 日曆中 當日 */
         background: lightblue; 
         color: white; 
         font-weight:bolder; /* 加粗字體 */
         text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+        font-size:1.5em;  /* em 字拉大的效果 */
     }
-    .nav{
+
+    .nav { /* 機器人 頭區 */
         width: 735px;
         margin:auto;
         background-color: rgba(255, 255, 255, 0.5); /* 加入白色半透明背景以強調選單 */
@@ -80,75 +83,70 @@
         padding: 2px;
     }
 
-    .nav td{
+    .nav td { /* 頭區的每個格子 */
         font-size: 30px;
         border:10px;
         padding:10px 10px;
         text-decoration: none;
     }
 
-    .today-button {
-    text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    .today-button { /* 頭區 的嘴巴 */
+        text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-      /* 設定按鈕的樣式 */
-    .today-link {
-    padding: 8px 40px 8px; /* 按鈕的內邊距 */
-    background-color: rgba(255, 199, 95, 0.8); 
-    /*background: rgba(255, 150, 113, 0.5); */
-    color: white; /* 按鈕的文字顏色 */
-    text-decoration: none; /* 取消超鏈接的下劃線 */
-    border-radius: 20px; /* 按鈕的圓角效果 */
+    .today-link { /* 頭區 的嘴巴按鈕 */
+        padding: 8px 40px 8px; /* 按鈕的內邊距 */
+        background-color: rgba(255, 199, 95, 0.8); 
+        /*background: rgba(255, 150, 113, 0.5); */
+        color: white; /* 按鈕的文字顏色 */
+        text-decoration: none; /* 取消超鏈接的下劃線 */
+        border-radius: 20px; /* 按鈕的圓角效果 */
     }
 
     .today-link:hover,
     .robot-arm .base:hover {
         background-color:lightcoral;
         transform: scale(1.1);
-        
     }
 
-    /* 下一個月按鈕的基本樣式 */
-    .nextMonth {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    text-decoration: none;
-    font-weight: bold;
-    /* transition: transform 0.3s ease, background-color 0.3s ease;  添加動畫效果 */
+    .nextMonth { /* 頭區 的腮紅(下一個月 ►) */
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        text-decoration: none;
+        font-weight: bold;
+        /* transition: transform 0.3s ease, background-color 0.3s ease;  添加動畫效果 */
     }
     
-    /* 滑鼠懸停在按鈕上的效果 */
-    .nextMonth:hover {
-    color: #68BE8D;
-    transform: scale(1.5); /* 放大效果 */
+    .nextMonth:hover { /* 滑鼠懸停在按鈕上的效果 */
+        color: #68BE8D;
+        transform: scale(1.5); /* 放大效果 */
     }
 
-    .nextMonth a {
-    color: #98D98E;
-    text-decoration: none;
+    .nextMonth a { /* 頭區 的腮紅(下一個月 ►)按鈕  */
+        color: #98D98E;
+        text-decoration: none;
     }
 
-    .sp-date {
-    font-size: 12px; /* 特定日期的文字大小 */
-    color: chocolate; 
-    font-weight: bold; /* 使文字加粗 */
+    .sp-date { /* 特別日期.農曆的國定假日 */
+        font-size: 12px; /* 文字大小 */
+        color: chocolate; 
+        font-weight: bold; /* 使文字加粗 */
     }
 
-    .holiday-text {
-    padding: bottom;
-    font-size: 14px; /* 國定假日的文字大小 */
-    color: crimson; 
-    /*font-style: italic;  讓文字傾斜 */
-    font-weight: bold; /* 使文字加粗 */
+    .holiday-text { /* 國定假日 */
+        padding: bottom;
+        font-size: 14px; /* 國定假日的文字大小 */
+        color: crimson; 
+        /*font-style: italic;  讓文字傾斜 */
+        font-weight: bold; /* 使文字加粗 */
     }
 
-    /* 調整 << 和 >> 的樣式 */
-    .nextYear {
+    .nextYear { /* 頭區 的眼睛(下一年 ►►)  */
         color: #fff;
         background:lightcoral;
         /* background: rgba(255, 199, 95, 0.8); */
@@ -165,18 +163,16 @@
     }
 
     .nextYear:hover {
-    background-color: rgba(255, 150, 113, 0.5);
-    border-radius: 50px;
+        background-color: rgba(255, 150, 113, 0.5);
+        border-radius: 50px;
     }
-
-    /* 移除底線效果 */
-    .nextYear a {
+    
+    .nextYear a { /* 頭區 的眼睛(下一年 ►►)按鈕  */
         color: white;
-        text-decoration: none;
+        text-decoration: none; /* 移除底線效果 */
     }
 
-    /* 調整月份的字體大小 */
-    .month {
+    .month { /* 頭區 的月份下拉選單  */
         color: white;
         font-size: 33px;
         background-color: rgba(255, 150, 113, 0.5);
@@ -188,103 +184,98 @@
         border: none; /* 取消邊框 */
     }    
 
-    .year {
+    .year { /* 頭區 中心(年份/生肖) */
         font-size: 36px; 
         color: lightgray; 
         font-weight: bold; 
         text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
     }
+        
+    .robot-arm { /* 機器手臂的容器 */
+        position: fixed;
+        /* top: 40%; 將機器手臂位置40% */
+        bottom: -200px;
+        right: 280px;  /*從右側出現460px */
+        width: 120px;
+        height: 220px;
+        transform: translateY(-50%); /* 垂直居中 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: move-arm 3s infinite ease-in-out; /* 添加晃動動畫 */
+        }
     
-    /* 機器手臂的容器 */
-    .robot-arm {
-    position: fixed;
-    /* top: 40%; 將機器手臂位置40% */
-    bottom: -200px;
-    right: 280px;  /*從右側出現460px */
-    width: 120px;
-    height: 220px;
-    transform: translateY(-50%); /* 垂直居中 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: move-arm 3s infinite ease-in-out; /* 添加晃動動畫 */
-    
-    }
-
-    /* 機器手臂的基礎 */
-    .robot-arm .base {
-    width: 100px;
-    height: 95px;
-    background-color: rgba(255, 150, 113, 0.5);
-    border-radius: 50%;
-    position: relative;
-    font-size: 22px;
-    color: white; 
-    font-weight:bolder; /* 加粗字體 */
-    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    cursor: pointer;
-    padding: 10px;
-    display: inline-block;
+    .robot-arm .base { /* 機器手臂的頭 */
+        width: 100px;
+        height: 95px;
+        background-color: rgba(255, 150, 113, 0.5);
+        border-radius: 50%;
+        position: relative;
+        font-size: 22px;
+        color: white; 
+        font-weight:bolder; /* 加粗字體 */
+        text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        cursor: pointer;
+        padding: 10px;
+        display: inline-block;
     }
     
-    #marquee-container {
-      margin-top: 20px;
-      font-size: 16px;
+    #marquee-container { /* 晃動動畫區 */
+        margin-top: 20px;
+        font-size: 16px;
     }
 
-    .base a {
-      text-decoration: none;
-      color: inherit;
+    .base a { /* 機器手臂的頭 按鈕 */
+        text-decoration: none;
+        color: inherit;
     }
 
-    /* 手臂的延展部分 */
-    .robot-arm .arm {
-    width: 50px;
-    height: 65px;
-    background-color: rgba(255, 150, 113, 0.5);
-    border-radius: 10px;
-    position: relative;
-    top: -10px;
-}
-    /* 手臂的動畫 */
-    @keyframes move-arm {
-    0%, 100% {
-        transform: translateY(-50%) rotate(0deg);
+    .robot-arm .arm { /* 手臂的延展部分 */
+        width: 50px;
+        height: 65px;
+        background-color: rgba(255, 150, 113, 0.5);
+        border-radius: 10px;
+        position: relative;
+        top: -10px;
     }
-    50% {
-        transform: translateY(-50%) rotate(15deg); /* 手臂擺動角度 */
+    
+    @keyframes move-arm { /* 手臂的動畫 */
+        0%, 100% {
+            transform: translateY(-50%) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-50%) rotate(15deg); /* 手臂擺動角度 */
+        }
     }
-    }
-
-    /*跑馬燈效果 */
-    #marquee-container {
-    margin: 20px auto;
-    width: 70%; 
-    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+    
+    #marquee-container { /* 跑馬燈效果區 */
+        margin: 20px auto;
+        width: 70%; 
+        background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+        border-radius: 10px;
+        padding: 5px;
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
     }
 
-    marquee {
-    color: lightcoral; 
-    font-size: 24px; /* 調整字體大小 */
-    font-weight: bold; /* 加粗字體 */
-    line-height: 1.5; /* 行高 */
-}
-    /* 設置台灣目前時間 */
-    .current-time {
-    font-size: 22px;
-    text-align: center;
-    margin: 20px;
+    marquee { /* 跑馬燈效果 框內區 */
+        color: lightcoral; 
+        font-size: 24px; /* 調整字體大小 */
+        font-weight: bold; /* 加粗字體 */
+        line-height: 1.5; /* 行高 */
+    }
+    
+    .current-time { /* 最下方 設置台灣目前時間 */
+        font-size: 22px;
+        text-align: center;
+        margin: 20px;
     }
 
-    a {
-    text-decoration: none;
+    a { /* 取消a標籤的底線 */
+        text-decoration: none;
     }
 
-    .left-image {
+    .left-image { 
     /* position: absolute;  固定在畫面左側 */
     position: fixed; /* 固定位置 */
     bottom: -10px;  /* 距離底部 90px */
@@ -295,7 +286,7 @@
     z-index: 10; /* 確保圖片位於其他元素之上 */
 }
 
-.left-image img {
+    .left-image img {
     width: 250px; 
     height: auto; /* 保持圖片比例 */
     border: none; /* 去除邊框 */
@@ -304,7 +295,7 @@
     animation: swing 2s infinite ease-in-out;
 }
 
-@keyframes swing {
+    @keyframes swing {
     0% {
         transform: rotate(-5deg);
     }
@@ -315,7 +306,6 @@
         transform: rotate(-5deg);
     }
 }
-
 
 
 </style>
@@ -618,8 +608,8 @@ $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
 </div>
 
 <div class="left-image">
-    <img src="./images/1-1.png" alt="左側圖片" />
-    <img src="./images/bg-1.png" alt="左側圖片" />
+    <img src="./images/1-1.png" alt="左圖1" />
+    <img src="./images/bg-1.png" alt="左圖2" />
 </div>
 
 
