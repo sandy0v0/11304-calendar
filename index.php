@@ -319,62 +319,62 @@
         z-index: 10; /* 確保圖片位於其他元素之上 */
 }
 
-.selected-image img {
-    width: 300px; 
+    .selected-image img {
+        width: 300px; 
         height: auto; /* 保持圖片比例 */
         border: none; /* 去除邊框 */
         /*border-radius: 10px;  如果需要圓角，視需求調整 */
         /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  添加輕微陰影增強效果 */
         animation: swing 2s infinite ease-in-out;
-}
+    }
 
-/* 11月的圖像位置 */
-.selected-image.month-11 img {
-    width: 250px;
-    position: fixed; /* 固定位置 */
-    bottom: 25px;  /* 距離底部 90px */
-    left: 25px; /* 距離左側 10px */
-}
+    /* 11月的圖像位置 */
+    .selected-image.month-11 img {
+        width: 250px;
+        position: fixed; /* 固定位置 */
+        bottom: 25px;  /* 距離底部 90px */
+        left: 25px; /* 距離左側 10px */
+    }
 
-/* 12月的圖像位置 */
-.selected-image.month-12 img {
-    width: 300px;
-    position: fixed; /* 固定位置 */
-    bottom: 15px;  /* 距離底部 90px */
-    left: 15px; /* 距離左側 10px */
-}
+    /* 12月的圖像位置 */
+    .selected-image.month-12 img {
+        width: 300px;
+        position: fixed; /* 固定位置 */
+        bottom: 15px;  /* 距離底部 90px */
+        left: 15px; /* 距離左側 10px */
+    }
 
-/* 1月的圖像位置 */
-.selected-image.month-1 img {
-    width: 300px;
-    position: fixed; /* 固定位置 */
-    bottom: -10px;  /* 距離底部 90px */
-    left: 10px; /* 距離左側 10px */
-}
+    /* 1月的圖像位置 */
+    .selected-image.month-1 img {
+        width: 300px;
+        position: fixed; /* 固定位置 */
+        bottom: -10px;  /* 距離底部 90px */
+        left: 10px; /* 距離左側 10px */
+    }
 
-/* 2月的圖像位置 */
-.selected-image.month-2 img {
-    width: 350px;
-    position: fixed; /* 固定位置 */
-    bottom: 10px;  /* 距離底部 90px */
-    left: -30px; /* 距離左側 10px */
-}
+    /* 2月的圖像位置 */
+    .selected-image.month-2 img {
+        width: 350px;
+        position: fixed; /* 固定位置 */
+        bottom: 10px;  /* 距離底部 90px */
+        left: -30px; /* 距離左側 10px */
+    }
 
-/* 3月的圖像位置 */
-.selected-image.month-3 img {
-    width: 250px;
-    position: fixed; /* 固定位置 */
-    bottom: 20px;  /* 距離底部 90px */
-    left: 20px; /* 距離左側 10px */
-}
+    /* 3月的圖像位置 */
+    .selected-image.month-3 img {
+        width: 250px;
+        position: fixed; /* 固定位置 */
+        bottom: 20px;  /* 距離底部 90px */
+        left: 20px; /* 距離左側 10px */
+    }
 
-/* 4月的圖像位置 */
-.selected-image.month-4 img {
-    width: 300px;
-    position: fixed; /* 固定位置 */
-    bottom: 10px;  /* 距離底部 90px */
-    left: 25px; /* 距離左側 10px */
-}
+    /* 4月的圖像位置 */
+    .selected-image.month-4 img {
+        width: 300px;
+        position: fixed; /* 固定位置 */
+        bottom: 10px;  /* 距離底部 90px */
+        left: 25px; /* 距離左側 10px */
+    }
 
 
 </style>
