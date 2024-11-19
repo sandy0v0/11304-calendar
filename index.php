@@ -16,6 +16,7 @@
         background-position: center; /* 圖片置中 */
         background-repeat: no-repeat; /* 不重複顯示背景圖片 */
         background-attachment: fixed; /* 固定背景圖不隨捲動 */
+        font-family: Arial, sans-serif; /* 設置整體字體樣式 */
     }
     
     h2 { /* 最上方抬頭 */
@@ -275,36 +276,104 @@
         text-decoration: none;
     }
 
-    .left-image { 
-    /* position: absolute;  固定在畫面左側 */
+    .left-image { /*最左邊 小圖區 */
+        /* position: absolute;  固定在畫面左側 */
+        position: fixed; /* 固定位置 */
+        bottom: 120px;  /* 距離底部 90px */
+        left: 325px; /* 距離左側 10px */
+        /* top: 50%; 垂直置中 */
+        /*left: 0;  靠左對齊 */
+        /*transform: translateY(-50%); 調整垂直置中效果 */
+        /*z-index: 1;  確保圖片位於其他元素之上 */
+    }
+
+    .left-image img { /*最左邊 小圖設定  */
+        width: 250px; 
+        height: auto; /* 保持圖片比例 */
+        border: none; /* 去除邊框 */
+        /*border-radius: 10px;  如果需要圓角，視需求調整 */
+        /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  添加輕微陰影增強效果 */
+        /* animation: swing 2s infinite ease-in-out; */
+    }
+
+    @keyframes swing { /* 小圖動畫 */
+        0% {
+            transform: rotate(-5deg);
+        }
+        50% {
+            transform: rotate(5deg);
+        }
+        100% {
+            transform: rotate(-5deg);
+        }
+    }
+
+    .selected-image {        
+        /* position: absolute;  固定在畫面左側 */
+        position: fixed; /* 固定位置 */
+        bottom: -10px;  /* 距離底部 90px */
+        left: 25px; /* 距離左側 10px */
+        /* top: 50%; 垂直置中 */
+        /*left: 0;  靠左對齊 */
+        /*transform: translateY(-50%); 調整垂直置中效果 */
+        z-index: 10; /* 確保圖片位於其他元素之上 */
+}
+
+.selected-image img {
+    width: 300px; 
+        height: auto; /* 保持圖片比例 */
+        border: none; /* 去除邊框 */
+        /*border-radius: 10px;  如果需要圓角，視需求調整 */
+        /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  添加輕微陰影增強效果 */
+        animation: swing 2s infinite ease-in-out;
+}
+
+/* 11月的圖像位置 */
+.selected-image.month-11 img {
+    width: 250px;
+    position: fixed; /* 固定位置 */
+    bottom: 25px;  /* 距離底部 90px */
+    left: 25px; /* 距離左側 10px */
+}
+
+/* 12月的圖像位置 */
+.selected-image.month-12 img {
+    width: 300px;
+    position: fixed; /* 固定位置 */
+    bottom: 15px;  /* 距離底部 90px */
+    left: 15px; /* 距離左側 10px */
+}
+
+/* 1月的圖像位置 */
+.selected-image.month-1 img {
+    width: 300px;
     position: fixed; /* 固定位置 */
     bottom: -10px;  /* 距離底部 90px */
+    left: 10px; /* 距離左側 10px */
+}
+
+/* 2月的圖像位置 */
+.selected-image.month-2 img {
+    width: 350px;
+    position: fixed; /* 固定位置 */
+    bottom: 10px;  /* 距離底部 90px */
+    left: -30px; /* 距離左側 10px */
+}
+
+/* 3月的圖像位置 */
+.selected-image.month-3 img {
+    width: 250px;
+    position: fixed; /* 固定位置 */
+    bottom: 20px;  /* 距離底部 90px */
+    left: 20px; /* 距離左側 10px */
+}
+
+/* 4月的圖像位置 */
+.selected-image.month-4 img {
+    width: 300px;
+    position: fixed; /* 固定位置 */
+    bottom: 10px;  /* 距離底部 90px */
     left: 25px; /* 距離左側 10px */
-    /* top: 50%; 垂直置中 */
-    /*left: 0;  靠左對齊 */
-    /*transform: translateY(-50%); 調整垂直置中效果 */
-    z-index: 10; /* 確保圖片位於其他元素之上 */
-}
-
-    .left-image img {
-    width: 250px; 
-    height: auto; /* 保持圖片比例 */
-    border: none; /* 去除邊框 */
-    border-radius: 10px; /* 如果需要圓角，視需求調整 */
-    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  添加輕微陰影增強效果 */
-    animation: swing 2s infinite ease-in-out;
-}
-
-    @keyframes swing {
-    0% {
-        transform: rotate(-5deg);
-    }
-    50% {
-        transform: rotate(5deg);
-    }
-    100% {
-        transform: rotate(-5deg);
-    }
 }
 
 
@@ -503,7 +572,7 @@ $zodiacName = $zodiacs[$zodiacIndex];
             </td>
             <td class="year"
             onclick="alert('⁎˙*✿*.⁎˙ (๑◕ܫ◕๑)ฅ | 感恩的心 (˶╹ꇴ╹˶)♡ 年年開心 | ✧*｡٩(ˊᗜˋ*)و✧*｡ .⁎˙* ✿--查詢年份，請按確定鍵後，點擊【 ◄◄ 】or【 ►► 】查詢~謝謝--✿')" 
-            style="font-size: 38px;">
+            style="font-size: 36px;">
                 <?php echo "{$year}年 {$zodiacName}"; ?>
             </td>
             <td class="nextYear">
@@ -547,6 +616,37 @@ $zodiacName = $zodiacs[$zodiacIndex];
         </div>
         <div class="arm"></div>
     </div>
+
+<?php
+// 設定當前年份和月份
+$year = isset($_GET['year']) ? $_GET['year'] : date('Y');
+$month = isset($_GET['month']) ? $_GET['month'] : date('n');
+
+// 定義每月對應的小圖
+$smallImages = [
+    1 => "23.png",
+    2 => "1-1.png",
+    3 => "2.png",
+    4 => "30.webp",
+    5 => "5.png",
+    6 => "6.png",
+    7 => "19.png",
+    8 => "23.png",
+    9 => "26.png",
+    10 => "27.png",
+    11 => "bg-1.png",
+    12 => "36.png",
+];
+
+// 獲取當前月份的小圖
+$selectedSmallImage = isset($smallImages[$month]) ? $smallImages[$month] : $smallImages[1];
+
+?>
+
+<div class="selected-image <?php echo "month-" . $month; ?>">
+    <img src="images/<?php echo $selectedSmallImage; ?>" alt="當前月份小圖">
+</div>
+
 <?php
 
  // 計算當月的第一天
@@ -608,8 +708,8 @@ $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
 </div>
 
 <div class="left-image">
-    <img src="./images/1-1.png" alt="左圖1" />
-    <img src="./images/bg-1.png" alt="左圖2" />
+    <!-- <img src="./images/11.png" alt="左圖1" /> -->
+    <img src="./images/11.png" alt="左圖2" />
 </div>
 
 
