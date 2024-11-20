@@ -269,7 +269,12 @@
     .current-time { /* 最下方 設置台灣目前時間 */
         font-size: 22px;
         text-align: center;
-        margin: 20px;
+        margin: 30px;
+        color: darkslateblue;
+    }
+
+    .current-time:hover { /* 滑鼠懸停在按鈕上的效果 */
+        color: darkblue;
     }
 
     a { /* 取消a標籤的底線 */
@@ -328,22 +333,6 @@
         animation: swing 2s infinite ease-in-out;
     }
 
-    /* 11月的圖像位置 */
-    .selected-image.month-11 img {
-        width: 250px;
-        position: fixed; /* 固定位置 */
-        bottom: 25px;  /* 距離底部 90px */
-        left: 25px; /* 距離左側 10px */
-    }
-
-    /* 12月的圖像位置 */
-    .selected-image.month-12 img {
-        width: 300px;
-        position: fixed; /* 固定位置 */
-        bottom: 15px;  /* 距離底部 90px */
-        left: 15px; /* 距離左側 10px */
-    }
-
     /* 1月的圖像位置 */
     .selected-image.month-1 img {
         width: 300px;
@@ -376,12 +365,120 @@
         left: 25px; /* 距離左側 10px */
     }
 
+    /* 5月的圖像位置 */
+    .selected-image.month-5 img {
+        width: 315px;
+        position: fixed; /* 固定位置 */
+        bottom: -13px;  /* 距離底部 90px */
+        left: 25px; /* 距離左側 10px */
+    }
+
+    /* 6月的圖像位置 */
+    .selected-image.month-6 img {
+        width: 315px;
+        position: fixed; /* 固定位置 */
+        bottom: 20px;  /* 距離底部 90px */
+        left: 40px; /* 距離左側 10px */
+    }
+
+    /* 7月的圖像位置 */
+    .selected-image.month-7 img {
+        width: 300px;
+        position: fixed; /* 固定位置 */
+        bottom: 20px;  /* 距離底部 90px */
+        left: 20px; /* 距離左側 10px */
+    }
+
+    /* 8月的圖像位置 */
+    .selected-image.month-8 img {
+        width: 300px;
+        position: fixed; /* 固定位置 */
+        bottom: 20px;  /* 距離底部 90px */
+        left: 10px; /* 距離左側 10px */
+    }
+
+    /* 9月的圖像位置 */
+    .selected-image.month-9 img {
+        width: 350px;
+        position: fixed; /* 固定位置 */
+        bottom: -5px;  /* 距離底部 90px */
+        left: -30px; /* 距離左側 10px */
+    }
+
+    /* 10月的圖像位置 */
+    .selected-image.month-10 img {
+        width: 230px;
+        position: fixed; /* 固定位置 */
+        bottom: 25px;  /* 距離底部 90px */
+        left: 30px; /* 距離左側 10px */
+    }
+    
+    /* 11月的圖像位置 */
+    .selected-image.month-11 img {
+        width: 250px;
+        position: fixed; /* 固定位置 */
+        bottom: 25px;  /* 距離底部 90px */
+        left: 25px; /* 距離左側 10px */
+    }
+
+    /* 12月的圖像位置 */
+    .selected-image.month-12 img {
+        width: 300px;
+        position: fixed; /* 固定位置 */
+        bottom: 15px;  /* 距離底部 90px */
+        left: 15px; /* 距離左側 10px */
+    }
+
+    /* 回首頁 */
+    a#home{
+    width: 80px;
+    height: 40px;
+    font-size: 15px; /*rem*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+    top: 15px;
+    left: 15px;
+    border-radius: 15px;
+    z-index:999;
+    }
+
+    a#home:hover{
+    background-color: lightcoral;
+    color:white;
+    }
+
+    .date-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .date-box .gregorian {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .date-box .additional {
+            font-size: 1.2em;
+            color: #555;
+        }
 
 </style>
 </head>
 <body>
 <h2>.⁎ .⁂ .⁎˙ ⁑ * 萬  年  曆  Perpetual calendar * ⁑ ˙⁎. ⁂. ⁎.  </h2> 
  <!-- <h2> (๑◕ܫ◕๑)ฅ . ฅ (๑•̀ ω •́๑) ฅ ʕ•͡ᴥ•ʔ ✿●  </h2> -->
+ <a id="home" href="../index.html">回目錄</a>
  
 <?php
 // 定義跑馬燈訊息
@@ -628,12 +725,12 @@ $smallImages = [
     2 => "1-1.png",
     3 => "2.png",
     4 => "30.webp",
-    5 => "5.png",
-    6 => "6.png",
-    7 => "19.png",
-    8 => "23.png",
-    9 => "26.png",
-    10 => "27.png",
+    5 => "65.png",
+    6 => "48.png",
+    7 => "53.png",
+    8 => "42.png",
+    9 => "66.png",
+    10 => "22.png",
     11 => "bg-1.png",
     12 => "36.png",
 ];
@@ -708,9 +805,47 @@ $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
 </div>
 
 <div class="left-image">
-    <!-- <img src="./images/11.png" alt="左圖1" /> -->
+    <!-- <img src="./images/65.png" alt="左圖1" /> -->
     <img src="./images/11.png" alt="左圖2" />
 </div>
+
+<?php
+// 包含中國農曆轉換的函數庫
+function solarToLunar($year, $month, $day) {
+    // 簡單模擬的函數 (可用完整的農曆轉換庫，如 chinese-calendar/php)
+    $lunar_date = "{$year}-{$month}-{$day} 的農曆";
+    return $lunar_date;
+}
+
+// 定義特殊節日
+$special_days = [
+    '2024-01-01' => '元旦',
+    '2024-02-10' => '春節',
+    '2024-02-14' => '情人節',
+    '2024-04-04' => '清明節',
+    '2024-12-25' => '聖誕節',
+];
+
+// 取得當前日期
+$today = date('Y-m-d');
+$year = date('Y');
+$month = date('m');
+$day = date('d');
+
+// 判斷是否為特殊節日
+if (array_key_exists($today, $special_days)) {
+    $display = $special_days[$today];
+} else {
+    // 轉換為農曆
+    $display = solarToLunar($year, $month, $day);
+}
+?>
+
+<div class="date-box">
+        <div class="gregorian">國曆：<?php echo $today; ?></div>
+        <div class="additional"><?php echo $display; ?></div>
+    </div>
+
 
 
 </body>
