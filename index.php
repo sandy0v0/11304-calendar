@@ -313,6 +313,18 @@
         }
     }
 
+    @keyframes swing1 { /* 小圖動畫 */
+        0% {
+            transform: rotate(-10deg);
+        }
+        50% {
+            transform: rotate(-23deg);
+        }
+        100% {
+            transform: rotate(-10deg);
+        }
+    }
+
     .selected-image {        
         /* position: absolute;  固定在畫面左側 */
         position: fixed; /* 固定位置 */
@@ -331,12 +343,12 @@
         /*border-radius: 10px;  如果需要圓角，視需求調整 */
         /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  添加輕微陰影增強效果 */
         animation: swing 2s infinite ease-in-out;
+        position: fixed; /* 固定位置 */
     }
 
     /* 1月的圖像位置 */
     .selected-image.month-1 img {
         width: 300px;
-        position: fixed; /* 固定位置 */
         bottom: -10px;  /* 距離底部 90px */
         left: 10px; /* 距離左側 10px */
     }
@@ -344,89 +356,79 @@
     /* 2月的圖像位置 */
     .selected-image.month-2 img {
         width: 350px;
-        position: fixed; /* 固定位置 */
-        bottom: 10px;  /* 距離底部 90px */
-        left: -30px; /* 距離左側 10px */
+        bottom: 10px;  
+        left: -30px; 
     }
 
     /* 3月的圖像位置 */
     .selected-image.month-3 img {
-        width: 250px;
-        position: fixed; /* 固定位置 */
-        bottom: 20px;  /* 距離底部 90px */
-        left: 20px; /* 距離左側 10px */
+        width: 350px;
+        bottom: 30px;  
+        left: -30px; 
+        animation: swing1 2s infinite ease-in-out;
     }
 
     /* 4月的圖像位置 */
     .selected-image.month-4 img {
-        width: 300px;
-        position: fixed; /* 固定位置 */
-        bottom: 10px;  /* 距離底部 90px */
-        left: 25px; /* 距離左側 10px */
+        width: 230px;
+        bottom: 15px;  
+        left: 50px; 
     }
 
     /* 5月的圖像位置 */
     .selected-image.month-5 img {
         width: 315px;
-        position: fixed; /* 固定位置 */
-        bottom: -13px;  /* 距離底部 90px */
-        left: 25px; /* 距離左側 10px */
+        bottom: -13px;  
+        left: 25px; 
     }
 
     /* 6月的圖像位置 */
     .selected-image.month-6 img {
         width: 315px;
-        position: fixed; /* 固定位置 */
-        bottom: 20px;  /* 距離底部 90px */
-        left: 40px; /* 距離左側 10px */
+        bottom: 20px;  
+        left: 40px; 
     }
 
     /* 7月的圖像位置 */
     .selected-image.month-7 img {
         width: 300px;
-        position: fixed; /* 固定位置 */
-        bottom: 20px;  /* 距離底部 90px */
-        left: 20px; /* 距離左側 10px */
+        bottom: 20px;  
+        left: 20px; 
     }
 
     /* 8月的圖像位置 */
     .selected-image.month-8 img {
-        width: 300px;
-        position: fixed; /* 固定位置 */
-        bottom: 20px;  /* 距離底部 90px */
-        left: 10px; /* 距離左側 10px */
+        width: 300px; 
+        bottom: 20px;  
+        left: 10px; 
     }
 
     /* 9月的圖像位置 */
     .selected-image.month-9 img {
         width: 350px;
-        position: fixed; /* 固定位置 */
-        bottom: -5px;  /* 距離底部 90px */
-        left: -30px; /* 距離左側 10px */
+        bottom: -5px;  
+        left: -30px; 
     }
 
     /* 10月的圖像位置 */
     .selected-image.month-10 img {
         width: 230px;
-        position: fixed; /* 固定位置 */
-        bottom: 25px;  /* 距離底部 90px */
-        left: 30px; /* 距離左側 10px */
+        bottom: 25px;  
+        left: 30px; 
     }
     
     /* 11月的圖像位置 */
     .selected-image.month-11 img {
         width: 250px;
-        position: fixed; /* 固定位置 */
-        bottom: 25px;  /* 距離底部 90px */
-        left: 25px; /* 距離左側 10px */
+        bottom: 25px;  
+        left: 25px; 
     }
 
     /* 12月的圖像位置 */
     .selected-image.month-12 img {
         width: 300px;
-        position: fixed; /* 固定位置 */
-        bottom: 15px;  /* 距離底部 90px */
-        left: 15px; /* 距離左側 10px */
+        bottom: 15px;  
+        left: 15px; 
     }
 
     /* 回首頁 */
@@ -458,22 +460,22 @@
 
 /* 農曆的基礎樣式 */
 .lunar-date {
-    font-size: 12px; /* 農曆字型大小 */
-    color: dimgray;  /* 農曆文字顏色 */
+    font-size: 12px; 
+    color: dimgray;  
     margin-top: 5px;
     font-weight: bold;
 }
 
 /* 顯示農曆月份的樣式 */
 .lunar-month {
-    color: #D2691E; /* 農曆月份顏色 */
-    font-size: 14px; /* 農曆月份字型大小 */
+    color: #D2691E; 
+    font-size: 14px; 
     font-weight: normal;
 }
 
 /* 顯示農曆日期的樣式 */
 .lunar-day {
-    color: #32CD32; /* 農曆日期顏色 */
+    color: #32CD32; 
     font-size: 12px;
 }
 
@@ -483,15 +485,15 @@
     padding-top: 3px;
 }
 
-/* 假日農曆顯示的樣式 */
+/* 當日期為假日（例如農曆新年等）時使用的樣式 */
 .lunar-holiday {
     background-color: #FFD700; /* 黃金色背景 */
-    color: #800000; /* 假日文字顏色 */
+    color: #800000; 
     padding: 2px;
     border-radius: 5px;
 }
 
-/* 節日農曆的樣式 */
+/* 當日期為特定節日（如聖誕節）時的樣式 */
 .lunar-festival {
     color: #DC143C; /* 節日文字顏色 */
     font-size: 14px;
@@ -501,7 +503,7 @@
 /* 當天的農曆顯示樣式 */
 .today-lunar {
     background-color: #FFD700; /* 當日農曆背景 */
-    color: #000; /* 當日農曆字體顏色 */
+    color: #000; 
     padding: 3px;
     border-radius: 50%;
     text-align: center;
@@ -512,7 +514,7 @@
 </head>
 <body>
 <h2>.⁎ .⁂ .⁎˙ ⁑ * 萬  年  曆  Perpetual calendar * ⁑ ˙⁎. ⁂. ⁎.  </h2> 
- <!-- <h2> (๑◕ܫ◕๑)ฅ . ฅ (๑•̀ ω •́๑) ฅ ʕ•͡ᴥ•ʔ ✿●  </h2> -->
+
  <a id="home" href="../index.html">回目錄</a>
  
 <?php
@@ -639,23 +641,22 @@ $prevYearMonth = $year - 1;
 $nextYearMonth = $year + 1;
 
 $spDate=[
-'2024-11-07'=>"🍲 立冬",
 '2024-06-10' => "🐲 端午節 🚩",
 '2024-09-17' => "🥮 中秋節 🌕",
-'2024-10-11' => "重陽節",
-'2024-11-07'=>"🍲 立冬",
-'2024-11-22'=>"⛄ 小雪",
-'2024-12-06'=>"☃️ 大雪",
-'2024-12-21'=>"🥣 冬至",
-'2024-12-25'=>"🎅行憲紀念🎄",
-'2025-01-27'=>"📅 彈性放假",
-'2025-01-28'=>"🧧 除夕",
-'2025-01-29'=>"農曆新年🧨",
-'2025-01-30'=>"農曆新年🧨",
-'2025-01-31'=>"農曆新年🧨",
-'2025-02-01'=>"農曆新年🧨",
-'2025-02-02'=>"農曆新年🧨",
-'2025-02-08'=>"🙈 補班",
+'2024-10-11' => "🌼 重陽節",
+'2024-11-07' => "🍲 立冬",
+'2024-11-22' => "⛄ 小雪",
+'2024-12-06' => "☃️ 大雪",
+'2024-12-21' => "🥣 冬至",
+'2024-12-25' => "🎅行憲紀念🎄",
+'2025-01-27' => "📅 彈性放假",
+'2025-01-28' => "🧧 除夕",
+'2025-01-29' => "農曆春節🧨",
+'2025-01-30' => "農曆新年🧨",
+'2025-01-31' => "農曆新年🧨",
+'2025-02-01' => "農曆新年🧨",
+'2025-02-02' => "農曆新年🧨",
+'2025-02-08' => "🙈 補班",
 '2025-05-31' => "🐲 端午節 🚩",
 '2025-10-06' => "🥮 中秋節 🌕",
 '2026-06-19' => "🐲 端午節 🚩",
@@ -758,7 +759,7 @@ $month = isset($_GET['month']) ? $_GET['month'] : date('n');
 $smallImages = [
     1 => "23.png",
     2 => "1-1.png",
-    3 => "2.png",
+    3 => "68.png",
     4 => "30.webp",
     5 => "65.png",
     6 => "48.png",
@@ -817,12 +818,12 @@ for($i=0;$i<6;$i++){
 
         // 如果 `$spDate` 有特定值，顯示 `$spDate` 的內容
         if (isset($spDate[date("Y-m-d", $theDayTime)])) {
-        echo "<span class='sp-date'></span>";
+            echo "<br><span class='sp-date'>{$spDate[date("Y-m-d", $theDayTime)]}</span>";
         }
 
         // 如果 `$holidays` 有特定值，顯示 `$holidays` 的內容
         elseif (isset($holidays[date("m-d", $theDayTime)])) {
-        echo "<span class='holiday-text'></span>";
+            echo "<br><span class='holiday-text'>{$holidays[date("m-d", $theDayTime)]}</span>";
         }
 
         // 否則顯示農曆日期
@@ -831,15 +832,15 @@ for($i=0;$i<6;$i++){
         }
 
         //如果有特定日期程式撰寫
-        if(isset($spDate[date("Y-m-d",$theDayTime)])){
-            echo "<br><span class='sp-date'>{$spDate[date("Y-m-d",$theDayTime)]}</span>";
-        }
+        // if(isset($spDate[date("Y-m-d",$theDayTime)])){
+        //     echo "<br><span class='sp-date'>{$spDate[date("Y-m-d",$theDayTime)]}</span>";
+        // }
 
-        //國定假日程式撰寫(如果想要改成不同顏色，要再上面新增CSS判斷)
-        //目前是農曆的節日要再另外設計
-        if(isset($holidays[date("m-d",$theDayTime)])){
-            echo "<br><span class='holiday-text'>{$holidays[date("m-d",$theDayTime)]}</span>";
-        }
+        // //國定假日程式撰寫(如果想要改成不同顏色，要再上面新增CSS判斷)
+        // //目前是農曆的節日要再另外設計
+        // if(isset($holidays[date("m-d",$theDayTime)])){
+        //     echo "<br><span class='holiday-text'>{$holidays[date("m-d",$theDayTime)]}</span>";
+        // }
         echo "</td>";
         
     }

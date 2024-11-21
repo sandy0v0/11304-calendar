@@ -269,7 +269,7 @@ class Lunar{
         array_push($lunarArray,$this->getLunarYearName($year));// 天干地支 
         array_push($lunarArray,$t,$e);
         array_push($lunarArray,$this->getYearZodiac($year));// 12生肖 
-        array_push($lunarArray,$leapMonth);// 閏几月 
+        array_push($lunarArray,$leapMonth);// 閏幾月 
         return $lunarArray;
     }
     /** 
