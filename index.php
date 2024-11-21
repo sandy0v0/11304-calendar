@@ -456,22 +456,57 @@
     color:white;
     }
 
-    .date-box {
-            border: 1px solid #ccc;
-            padding: 20px;
-            display: inline-block;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-        }
-        .date-box .gregorian {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .date-box .additional {
-            font-size: 1.2em;
-            color: #555;
-        }
+/* 農曆的基礎樣式 */
+.lunar-date {
+    font-size: 12px; /* 農曆字型大小 */
+    color: dimgray;  /* 農曆文字顏色 */
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* 顯示農曆月份的樣式 */
+.lunar-month {
+    color: #D2691E; /* 農曆月份顏色 */
+    font-size: 14px; /* 農曆月份字型大小 */
+    font-weight: normal;
+}
+
+/* 顯示農曆日期的樣式 */
+.lunar-day {
+    color: #32CD32; /* 農曆日期顏色 */
+    font-size: 12px;
+}
+
+/* 農曆日期的底部線條 */
+.lunar-date-box {
+    border-top: 1px solid #A9A9A9; /* 上邊框顏色 */
+    padding-top: 3px;
+}
+
+/* 假日農曆顯示的樣式 */
+.lunar-holiday {
+    background-color: #FFD700; /* 黃金色背景 */
+    color: #800000; /* 假日文字顏色 */
+    padding: 2px;
+    border-radius: 5px;
+}
+
+/* 節日農曆的樣式 */
+.lunar-festival {
+    color: #DC143C; /* 節日文字顏色 */
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 當天的農曆顯示樣式 */
+.today-lunar {
+    background-color: #FFD700; /* 當日農曆背景 */
+    color: #000; /* 當日農曆字體顏色 */
+    padding: 3px;
+    border-radius: 50%;
+    text-align: center;
+}
+
 
 </style>
 </head>
@@ -608,7 +643,7 @@ $spDate=[
 '2024-06-10' => "🐲 端午節 🚩",
 '2024-09-17' => "🥮 中秋節 🌕",
 '2024-10-11' => "重陽節",
-'2024-11-22'=>"🍲 立冬",
+'2024-11-07'=>"🍲 立冬",
 '2024-11-22'=>"⛄ 小雪",
 '2024-12-06'=>"☃️ 大雪",
 '2024-12-21'=>"🥣 冬至",
@@ -752,6 +787,9 @@ $firstDay="{$year}-{$month}-1";
 $firstDayTime=strtotime($firstDay); // 將第一天轉換成時間戳
 $firstDayWeek=date("w",$firstDayTime); // 獲取第一天是星期幾
 
+require_once 'lunar.php';
+$lunar = new Lunar(); // 初始化農曆轉換類別
+
 // 逐行顯示每一天
 for($i=0;$i<6;$i++){
     echo "<tr>"; 
@@ -769,10 +807,18 @@ for($i=0;$i<6;$i++){
         $isToday=(date("Y-m-d",$theDayTime)==date("Y-m-d"))?'today':'';
         $w=date("w",$theDayTime);
         $isHoliday=($w==0 || $w==6)?'holiday':''; // 假日（星期六和星期天）
+
+        // 取得農曆日期
+        $lunarDate = $lunar->convertSolarToLunar(date('Y', $theDayTime), date('m', $theDayTime), date('d', $theDayTime));
         
         //顯示日期
         echo "<td class='$isHoliday $theMonth $isToday'>";
-        echo date("d",$theDayTime); 
+        echo date("d",$theDayTime); // 西曆日期
+
+        // 顯示農曆
+        if ($lunarDate) {
+            echo "<br><span class='lunar-date'>{$lunarDate[1]}{$lunarDate[2]}</span>";  // 顯示農曆月日
+        }
 
         //如果有特定日期程式撰寫
         if(isset($spDate[date("Y-m-d",$theDayTime)])){
@@ -808,45 +854,6 @@ $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
     <!-- <img src="./images/65.png" alt="左圖1" /> -->
     <img src="./images/11.png" alt="左圖2" />
 </div>
-
-<?php
-// 包含中國農曆轉換的函數庫
-function solarToLunar($year, $month, $day) {
-    // 簡單模擬的函數 (可用完整的農曆轉換庫，如 chinese-calendar/php)
-    $lunar_date = "{$year}-{$month}-{$day} 的農曆";
-    return $lunar_date;
-}
-
-// 定義特殊節日
-$special_days = [
-    '2024-01-01' => '元旦',
-    '2024-02-10' => '春節',
-    '2024-02-14' => '情人節',
-    '2024-04-04' => '清明節',
-    '2024-12-25' => '聖誕節',
-];
-
-// 取得當前日期
-$today = date('Y-m-d');
-$year = date('Y');
-$month = date('m');
-$day = date('d');
-
-// 判斷是否為特殊節日
-if (array_key_exists($today, $special_days)) {
-    $display = $special_days[$today];
-} else {
-    // 轉換為農曆
-    $display = solarToLunar($year, $month, $day);
-}
-?>
-
-<div class="date-box">
-        <div class="gregorian">國曆：<?php echo $today; ?></div>
-        <div class="additional"><?php echo $display; ?></div>
-    </div>
-
-
 
 </body>
 </html>
