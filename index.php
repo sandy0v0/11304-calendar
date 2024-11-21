@@ -72,7 +72,7 @@
         background: lightblue; 
         color: white; 
         font-weight:bolder; /* 加粗字體 */
-        text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+        text-shadow: 1.3px 1.3px 1px rgba(0, 0, 0, 0.5);
         font-size:1.5em;  /* em 字拉大的效果 */
     }
 
@@ -813,11 +813,21 @@ for($i=0;$i<6;$i++){
         
         //顯示日期
         echo "<td class='$isHoliday $theMonth $isToday'>";
-        echo date("d",$theDayTime); // 西曆日期
+        echo date("d",$theDayTime); // 陽曆日期
 
-        // 顯示農曆
-        if ($lunarDate) {
-            echo "<br><span class='lunar-date'>{$lunarDate[1]}{$lunarDate[2]}</span>";  // 顯示農曆月日
+        // 如果 `$spDate` 有特定值，顯示 `$spDate` 的內容
+        if (isset($spDate[date("Y-m-d", $theDayTime)])) {
+        echo "<span class='sp-date'></span>";
+        }
+
+        // 如果 `$holidays` 有特定值，顯示 `$holidays` 的內容
+        elseif (isset($holidays[date("m-d", $theDayTime)])) {
+        echo "<span class='holiday-text'></span>";
+        }
+
+        // 否則顯示農曆日期
+        elseif ($lunarDate) {
+        echo "<br><span class='lunar-date'>{$lunarDate[1]}{$lunarDate[2]}</span>"; // 農曆月日
         }
 
         //如果有特定日期程式撰寫
