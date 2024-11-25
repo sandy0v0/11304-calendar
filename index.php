@@ -108,7 +108,7 @@
     .today-link:hover,
     .robot-arm .base:hover {
         background-color:lightcoral;
-        transform: scale(1.1);
+        transform: scale(1.03);
     }
 
     .nextMonth { /* 頭區 的腮紅(下一個月 ►) */
@@ -195,29 +195,30 @@
     .robot-arm { /* 機器手臂的容器 */
         position: fixed;
         /* top: 40%; 將機器手臂位置40% */
-        bottom: 30px;
+        bottom: 210px;
         /*right: 460px;  從右側出現460px */
-        left: 430px;
-        width: 120px;
+        left: 415px;
+        width: 110px;
         height: 220px;
         transform: translateY(-50%); /* 垂直居中 */
         display: flex;
         flex-direction: column;
         align-items: center;
-        animation: move-arm 3s infinite ease-in-out; /* 添加晃動動畫 */
+        /*animation: move-arm 3s infinite ease-in-out;  添加晃動動畫 */
         }
     
     .robot-arm .base { /* 機器手臂的頭 */
-        width: 80px;
-        height: 80px;
-        background-color: rgba(255, 150, 113, 0.5);
+        width: 75px;
+        height: 75px;
+        /* background-color: rgba(255, 150, 113, 0.5); */
         /* background-color: rgba(190, 230, 235, 0.5); */
+        background-color: rgba(255, 255, 235, 0.5);
         border-radius: 50%;
         position: relative;
-        font-size: 50px;
+        font-size: 45px;
         color: white; 
         font-weight:bolder; /* 加粗字體 */
-        text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
         text-align: center;
         cursor: pointer;
         padding: 10px;
@@ -245,10 +246,10 @@
     
     @keyframes move-arm { /* 手臂的動畫 */
         0%, 100% {
-            transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(-5deg);
         }
         50% {
-            transform: translateY(-50%) rotate(15deg); /* 手臂擺動角度 */
+            transform: translateY(-50%) rotate(5deg); /* 手臂擺動角度 */
         }
     }
     
@@ -287,7 +288,7 @@
         /* position: absolute;  固定在畫面左側 */
         position: fixed; /* 固定位置 */
         bottom: 120px;  /* 距離底部 90px */
-        left: 325px; /* 距離左側 10px */
+        left: 345px; /* 距離左側 10px */
         /* top: 50%; 垂直置中 */
         /*left: 0;  靠左對齊 */
         /*transform: translateY(-50%); 調整垂直置中效果 */
@@ -696,6 +697,10 @@ $zodiacs = ["🐭", "🐮", "🐯", "🐰", "🐉", "🐍", "🐴", "🐏", "�
 // 根據年份計算生肖
 $zodiacIndex = ($year - 4) % 12;
 $zodiacName = $zodiacs[$zodiacIndex];
+
+include 'lunar.php';
+// 使用 getLunarYearName 函數計算天干地支
+$lunarYearName = getLunarYearName($year);
 ?>
 
 <div class='nav'>
@@ -760,7 +765,7 @@ $zodiacName = $zodiacs[$zodiacIndex];
 <div class="robot-arm">
         <div class="base">
             <a href="?update=true">
-            <?php echo "{$zodiacName}" ?>
+            <?php echo"{$zodiacName}<br>♪•♫<br>{$lunarYearName} ♫˚♪•" ?>
         </div>
         <!-- <div class="arm"></div> -->
     </div>

@@ -108,14 +108,14 @@ class Lunar{
         return array($year,$month,$day);
     }
     /** 
-    * 判断是否是閏年  
+    * 判斷是否是閏年  
     * @param year 
     */ 
     function isLeapYear($year){ 
         return (($year%4==0&&$year%100!=0)||($year%400==0));
     }
     /** 
-    * 获取干支纪年 
+    * 獲取干支纪年 
     * @param year 
     */ 
     function getLunarYearName($year){ 
@@ -300,4 +300,17 @@ class Lunar{
         return $res;
     }
 }
+?>
+
+<?php
+function getLunarYearName($year) { 
+    $sky = array('甲','乙','丙','丁','戊','己','庚','辛','壬','癸');
+    $earth = array('子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥');
+    
+    $skyIndex = ($year - 4) % 10; // 天干公式
+    $earthIndex = ($year - 4) % 12; // 地支公式
+    
+    return $sky[$skyIndex] . $earth[$earthIndex];
+}
+
 ?>
