@@ -11,7 +11,7 @@
 
     body {
         text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
-        background-image: url('./images/1.jfif'); /*設定背景圖片*/
+        background-image: url('./images/0.png'); /*設定背景圖片*/
         background-size: cover;/*使圖片覆蓋整個背景*/
         background-position: center; /* 圖片置中 */
         background-repeat: no-repeat; /* 不重複顯示背景圖片 */
@@ -19,7 +19,7 @@
         font-family: Arial, sans-serif; /* 設置整體字體樣式 */
     }
     
-    h2 { /* 最上方抬頭 */
+    h1 { /* 最上方抬頭 */
         color: lightcoral;
         text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); /* 添加陰影提高可讀性 */
     }
@@ -195,8 +195,9 @@
     .robot-arm { /* 機器手臂的容器 */
         position: fixed;
         /* top: 40%; 將機器手臂位置40% */
-        bottom: -200px;
-        right: 280px;  /*從右側出現460px */
+        bottom: 30px;
+        /*right: 460px;  從右側出現460px */
+        left: 430px;
         width: 120px;
         height: 220px;
         transform: translateY(-50%); /* 垂直居中 */
@@ -207,12 +208,13 @@
         }
     
     .robot-arm .base { /* 機器手臂的頭 */
-        width: 100px;
-        height: 95px;
+        width: 80px;
+        height: 80px;
         background-color: rgba(255, 150, 113, 0.5);
+        /* background-color: rgba(190, 230, 235, 0.5); */
         border-radius: 50%;
         position: relative;
-        font-size: 22px;
+        font-size: 50px;
         color: white; 
         font-weight:bolder; /* 加粗字體 */
         text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
@@ -251,7 +253,7 @@
     }
     
     #marquee-container { /* 跑馬燈效果區 */
-        margin: 20px auto;
+        margin: 10px auto;
         width: 70%; 
         background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
         border-radius: 10px;
@@ -269,7 +271,7 @@
     .current-time { /* 最下方 設置台灣目前時間 */
         font-size: 22px;
         text-align: center;
-        margin: 30px;
+        margin: 25px;
         color: darkslateblue;
     }
 
@@ -325,6 +327,18 @@
         }
     }
 
+    @keyframes swing2 { /* 小圖動畫 */
+        0% {
+            transform: rotate(25deg);
+        }
+        50% {
+            transform: rotate(10deg);
+        }
+        100% {
+            transform: rotate(25deg);
+        }
+    }
+
     .selected-image {        
         /* position: absolute;  固定在畫面左側 */
         position: fixed; /* 固定位置 */
@@ -348,24 +362,24 @@
 
     /* 1月的圖像位置 */
     .selected-image.month-1 img {
-        width: 300px;
+        width: 290px;
         bottom: -10px;  /* 距離底部 90px */
-        left: 10px; /* 距離左側 10px */
+        left: 15px; /* 距離左側 10px */
     }
 
     /* 2月的圖像位置 */
     .selected-image.month-2 img {
-        width: 350px;
+        width: 310px;
         bottom: 10px;  
-        left: -30px; 
+        left: 5px; 
+        animation: swing2 2s infinite ease-in-out;
     }
 
     /* 3月的圖像位置 */
     .selected-image.month-3 img {
-        width: 350px;
-        bottom: 30px;  
-        left: -30px; 
-        animation: swing1 2s infinite ease-in-out;
+        width: 310px;
+        bottom: 5px;  
+        left: 5px; 
     }
 
     /* 4月的圖像位置 */
@@ -377,30 +391,31 @@
 
     /* 5月的圖像位置 */
     .selected-image.month-5 img {
-        width: 315px;
-        bottom: -13px;  
-        left: 25px; 
+        width: 300px; 
+        bottom: 20px;  
+        left: 10px; 
     }
 
     /* 6月的圖像位置 */
     .selected-image.month-6 img {
-        width: 315px;
-        bottom: 20px;  
-        left: 40px; 
+        width: 350px;
+        bottom: 30px;  
+        left: -30px; 
+        animation: swing1 2s infinite ease-in-out; 
     }
 
     /* 7月的圖像位置 */
     .selected-image.month-7 img {
-        width: 300px;
+        width: 270px;
         bottom: 20px;  
-        left: 20px; 
+        left: 35px; 
     }
 
     /* 8月的圖像位置 */
     .selected-image.month-8 img {
-        width: 300px; 
-        bottom: 20px;  
-        left: 10px; 
+        width: 300px;
+        bottom: 30px;  
+        left: 20px; 
     }
 
     /* 9月的圖像位置 */
@@ -513,7 +528,7 @@
 </style>
 </head>
 <body>
-<h2>.⁎ .⁂ .⁎˙ ⁑ * 萬  年  曆  Perpetual calendar * ⁑ ˙⁎. ⁂. ⁎.  </h2> 
+<h1>.⁎ .⁂ .⁎˙ ⁑ * 萬  年  曆  Perpetual calendar * ⁑ ˙⁎. ⁂. ⁎.  </h1> 
 
  <a id="home" href="../index.html">回目錄</a>
  
@@ -522,7 +537,7 @@
 $marqueeMessages = [
     "✨種自己的花，愛自己的宇宙，在不完美的生活裡，找到閃亮亮的快樂✧(๑•̀ㅂ•́)و✧✨",
     "✿ 每個人的花期不同，不必焦慮有人比你提前擁有！ก็ʕ•͡ᴥ•ʔก้ ✿",
-    "遺憾和失去，是我們要面臨的課題，告別比告白還要難！(๑•́︿•̀๑) ",
+    "遺憾和失去，是我們要面臨的課題，睡前原諒一切，醒來不問過往，珍惜所有的不期而遇，看淡所有的不辭而別！(๑•́＿•̀๑) ",
     "有人懂你奇奇怪怪，有人陪你可可愛愛 ╭(●╹∀╹●)╯╰(●•◡•●)╮",
     "比起被圍觀，悄悄努力或許更踏實！٩(๑•̀ㅂ•́๑)۶",
     "用心生活，每天都是美好的一天！٩(˶╹ꇴ╹˶)و ",
@@ -565,7 +580,7 @@ $marqueeMessages = [
     "微笑是我們心靈的最真誠傾訴，是在困難面前最好的良藥 (｡◕∀◕｡)",
     "當你再也沒有什麼可以失去的時候，就是你開始得到的時候 ✧◝(⁰▿⁰)◜✧",
     "世界上最可貴的兩個詞，一個叫認真，一個叫堅持，認真的人改變了自己，堅持的人改變了命運 (*°ω°*ฅ)*",
-    "不要質疑你的付出，這些都是一種累積一種沉澱，它們會默默鋪路，只為讓你成為更優秀的人 (￫ܫ￩)",
+    "不要質疑你的付出，這些都是一種累積一種沉澱，它們會默默鋪路，只為讓你成為更優秀的人 (ㆆܫㆆ)",
     "不給自己設限，則人生中就沒有限制你施展的藩籬 /ᐠ .ᆺ. ᐟ\ﾉ",
     "一個人的態度，決定他的高度 ⎝(◕u◕)⎠",
     "不強求自己與世無爭，而是希望在看透了人生無常後，依然能熱愛生活，享受生活 (´・ω・)つ旦",
@@ -574,7 +589,7 @@ $marqueeMessages = [
     "每一天都是一個新的開始，每一天都是一段全新的旅程。追逐一切未知，創造無限可能 (✪ω✪)",
     "人生觀決定了一個人的人生追求，世界觀決定了一個人的思想境界，價值觀決定了一個人的行為準則 (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
     "不是因為生活太現實，而對生活失望。而是知道生活太現實，所以更要用心的活下去，給自己一個擁抱 ヽ(´ ︶ `)ノ",
-    "學會改變生活，學會品味滄桑，方可無悔青春，無憾歲月的消逝 (›´ω`‹ )",
+    "學會改變生活，學會品味滄桑，方可無悔青春，無憾歲月的消逝；你的年齡應該成為你生命的勳章，而不是你感傷的理由 (›´ω`‹ )",
     "找到一個真正的朋友，那是幸運；能維繫一段真正的友誼，那是幸福 ♡(*´∀｀*)人(*´∀｀*)♡",
     "朋友是那個連你自己都不相信自己時，依然相信著你的那個人 ₍₍ ◝('ω'◝) ⁾⁾ ₍₍ (◟'ω')◟ ⁾⁾",
     "相互了解是朋友，相互理解是知己 ╮/(＞▽<)人(>▽＜)\╭",
@@ -706,7 +721,7 @@ $zodiacName = $zodiacs[$zodiacIndex];
             <td class="year"
             onclick="alert('⁎˙*✿*.⁎˙ (๑◕ܫ◕๑)ฅ | 感恩的心 (˶╹ꇴ╹˶)♡ 年年開心 | ✧*｡٩(ˊᗜˋ*)و✧*｡ .⁎˙* ✿--查詢年份，請按確定鍵後，點擊【 ◄◄ 】or【 ►► 】查詢~謝謝--✿')" 
             style="font-size: 36px;">
-                <?php echo "{$year}年 {$zodiacName}"; ?>
+                <?php echo "{$year}年"; ?>
             </td>
             <td class="nextYear">
                 <a href="index.php?year=<?=$nextYearMonth;?>&month=<?=$month;?>">►►</a>    
@@ -745,9 +760,9 @@ $zodiacName = $zodiacs[$zodiacIndex];
 <div class="robot-arm">
         <div class="base">
             <a href="?update=true">
-                來碗<br>🐔soup<br>ヽ(⚲□⚲)ﾉﾟ
+            <?php echo "{$zodiacName}" ?>
         </div>
-        <div class="arm"></div>
+        <!-- <div class="arm"></div> -->
     </div>
 
 <?php
@@ -757,18 +772,18 @@ $month = isset($_GET['month']) ? $_GET['month'] : date('n');
 
 // 定義每月對應的小圖
 $smallImages = [
-    1 => "23.png",
-    2 => "1-1.png",
-    3 => "68.png",
-    4 => "30.webp",
-    5 => "65.png",
-    6 => "48.png",
+    1 => "23-1.png",
+    2 => "69.png",
+    3 => "71.png",
+    4 => "30-1.webp",
+    5 => "42.png",
+    6 => "68.png",
     7 => "53.png",
-    8 => "42.png",
-    9 => "66.png",
-    10 => "22.png",
-    11 => "bg-1.png",
-    12 => "36.png",
+    8 => "48.png",
+    9 => "66-1.png",
+    10 => "22-1.png",
+    11 => "bg-2.png",
+    12 => "36-1.png",
 ];
 
 // 獲取當前月份的小圖
