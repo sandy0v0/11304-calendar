@@ -11,13 +11,54 @@
 
     body {
         text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
-        background-image: url('./images/0.png'); /*設定背景圖片*/
+        background-image: url('./images/001.png'); /*設定背景圖片*/
         background-size: cover;/*使圖片覆蓋整個背景*/
         background-position: center; /* 圖片置中 */
         background-repeat: no-repeat; /* 不重複顯示背景圖片 */
         background-attachment: fixed; /* 固定背景圖不隨捲動 */
         font-family: Arial, sans-serif; /* 設置整體字體樣式 */
+        background-color: rgba(255, 255, 255, 0.9); /* 增加日曆的白色半透明背景 */
+    /* margin: 0; */
+    /* padding: 0; */
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     }
+    /* 容器 */
+.container {
+    position: relative;
+    width: 70%;
+    height: 60%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; */
+}
+
+/* 毛玻璃效果層 */
+.glass-effect {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* 半透明背景色 */
+    backdrop-filter: blur(1px); /* 毛玻璃效果 */
+    -webkit-backdrop-filter: blur(10px); /* 支援 Safari */
+    /*border: 1px solid rgba(255, 255, 255, 0.3);  邊框效果 */
+    border-radius: 15px; /* 圓角 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  陰影效果 */
+}
+/* 文字樣式 */
+h1, p {
+    margin: 0; /* 移除標題和段落的預設外邊距 */
+    padding: 0; /* 移除標題和段落的預設內邊距 */
+}
     
     h1 { /* 最上方抬頭 */
         color: lightcoral;
@@ -41,7 +82,7 @@
 
     td { /* table 裡面 */
         width: 140px;
-        height: 55px;
+        height: 60px;
         font-weight: bold;
         padding: 10px 10px; /* 單元格內的邊距 */
         text-align:center; /* 文字居中 */
@@ -195,9 +236,9 @@
     .robot-arm { /* 機器手臂的容器 */
         position: fixed;
         /* top: 40%; 將機器手臂位置40% */
-        bottom: 210px;
+        bottom: 75px;
         /*right: 460px;  從右側出現460px */
-        left: 415px;
+        right: 120px;
         width: 110px;
         height: 220px;
         transform: translateY(-50%); /* 垂直居中 */
@@ -216,7 +257,7 @@
         border-radius: 50%;
         position: relative;
         font-size: 45px;
-        color: white; 
+        color: burlywood; 
         font-weight:bolder; /* 加粗字體 */
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
         text-align: center;
@@ -287,8 +328,8 @@
     .left-image { /*最左邊 小圖區 */
         /* position: absolute;  固定在畫面左側 */
         position: fixed; /* 固定位置 */
-        bottom: 120px;  /* 距離底部 90px */
-        left: 345px; /* 距離左側 10px */
+        bottom: 75px;  /* 距離底部 90px */
+        right: 80px; /* 距離右側 335px */
         /* top: 50%; 垂直置中 */
         /*left: 0;  靠左對齊 */
         /*transform: translateY(-50%); 調整垂直置中效果 */
@@ -532,7 +573,6 @@
 <h1>.⁎ .⁂ .⁎˙ ⁑ * 萬  年  曆  Perpetual calendar * ⁑ ˙⁎. ⁂. ⁎.  </h1> 
 
  <a id="home" href="../index.html">回目錄</a>
- 
 <?php
 // 定義跑馬燈訊息
 $marqueeMessages = [
@@ -573,8 +613,8 @@ $marqueeMessages = [
     "每一次創傷都是一次成熟，每一次失去都是一次獲得 (´-ι_-｀)",
     "即使我們走得再慢，也比站在原地更接近目標 (๑´ㅁ`)",
     "用平和的心態面對一切，才能從容不迫 (=´ω`=)",
-    "勇敢不是沒有恐懼，而是帶著恐懼依然前行 ( ºΔº )",
-    "與其抱怨，不如改變；與其等待，不如行動 (｡•ㅅ•｡)ﾉ ",
+    "勇敢不是沒有恐懼，而是帶著恐懼依然前行 ┌( ºΔº )┘",
+    "與其抱怨，不如改變；與其等待，不如行動；一切偉大的行動和思想，都有一個微不足道的開始 (｡•ㅅ•｡)ﾉ ",
     "學會感恩，生活才會更加豐富和美好 (´▽`ʃ♡ƪ)",
     "總有一天，你會站在最亮的地方，活成自己曾經渴望的模樣 *｡٩(ˊωˋ*)و✧*｡",
     "心存希望，幸福就會降臨你；心存夢想，機遇就會籠罩你 (•‾⌣‾•)",
@@ -590,12 +630,12 @@ $marqueeMessages = [
     "每一天都是一個新的開始，每一天都是一段全新的旅程。追逐一切未知，創造無限可能 (✪ω✪)",
     "人生觀決定了一個人的人生追求，世界觀決定了一個人的思想境界，價值觀決定了一個人的行為準則 (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
     "不是因為生活太現實，而對生活失望。而是知道生活太現實，所以更要用心的活下去，給自己一個擁抱 ヽ(´ ︶ `)ノ",
-    "學會改變生活，學會品味滄桑，方可無悔青春，無憾歲月的消逝；你的年齡應該成為你生命的勳章，而不是你感傷的理由 (›´ω`‹ )",
+    "學會改變生活，學會品味滄桑，方可無悔青春，無憾歲月的消逝 (›´ω`‹ )",
     "找到一個真正的朋友，那是幸運；能維繫一段真正的友誼，那是幸福 ♡(*´∀｀*)人(*´∀｀*)♡",
     "朋友是那個連你自己都不相信自己時，依然相信著你的那個人 ₍₍ ◝('ω'◝) ⁾⁾ ₍₍ (◟'ω')◟ ⁾⁾",
     "相互了解是朋友，相互理解是知己 ╮/(＞▽<)人(>▽＜)\╭",
     "不必太糾結於當下，也不必太憂慮未來，當你經歷過一些事情，眼前的風景已跟從前不一樣 ฅ^•ﻌ•^ฅ",
-    "一切偉大的行動和思想，都有一個微不足道的開始 ((=•오•=))",
+    "一歲有一歲的味道，一站有一站的風景，你的年齡應該成為你生命的勳章，而不是你感傷的理由，縱使眼裡寫滿故事，臉上依然不漏風霜，你吞下了所有委屈，終將餵大你的格局 ((=•오•=))",
 ];
 
 // 隨機選擇一則訊息
@@ -616,7 +656,8 @@ if (isset($_GET['update'])) {
         <?php echo $randomMessage; ?>
     </marquee>
 </div>
-
+<div class="container">
+<div class="glass-effect">
 
 <?php
 /*請在這裹撰寫你的萬年曆程式碼*/  
@@ -770,35 +811,6 @@ $lunarYearName = getLunarYearName($year);
         <!-- <div class="arm"></div> -->
     </div>
 
-<?php
-// 設定當前年份和月份
-$year = isset($_GET['year']) ? $_GET['year'] : date('Y');
-$month = isset($_GET['month']) ? $_GET['month'] : date('n');
-
-// 定義每月對應的小圖
-$smallImages = [
-    1 => "23-1.png",
-    2 => "69.png",
-    3 => "71.png",
-    4 => "30-1.webp",
-    5 => "42.png",
-    6 => "68.png",
-    7 => "53.png",
-    8 => "48.png",
-    9 => "66-1.png",
-    10 => "22-1.png",
-    11 => "bg-2.png",
-    12 => "36-1.png",
-];
-
-// 獲取當前月份的小圖
-$selectedSmallImage = isset($smallImages[$month]) ? $smallImages[$month] : $smallImages[1];
-
-?>
-
-<div class="selected-image <?php echo "month-" . $month; ?>">
-    <img src="images/<?php echo $selectedSmallImage; ?>" alt="當前月份小圖">
-</div>
 
 <?php
 
@@ -870,7 +882,7 @@ for($i=0;$i<6;$i++){
 ?>
 
 </table>
-
+</div>
 <?php
 date_default_timezone_set("Asia/Taipei"); // 設置台灣時區
 $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
@@ -881,9 +893,42 @@ $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
     ٩(˶╹ꇴ╹˶)و 台灣日期：<?php echo $currentTime; ?> | 點選 (๑◕ܫ◕๑)ฅ | 獲取目前時間 ♪♪  
 </div>
 
+</div>
+
 <div class="left-image">
-    <!-- <img src="./images/65.png" alt="左圖1" /> -->
-    <img src="./images/11.png" alt="左圖2" />
+    <img src="./images/11.png" alt="左圖1" />
+    <img src="./images/8-1-1.png" alt="左圖2" />
+</div>
+    
+
+    <?php
+// 設定當前年份和月份
+$year = isset($_GET['year']) ? $_GET['year'] : date('Y');
+$month = isset($_GET['month']) ? $_GET['month'] : date('n');
+
+// 定義每月對應的小圖
+$smallImages = [
+    1 => "23-1.png",
+    2 => "69.png",
+    3 => "71.png",
+    4 => "30-1.webp",
+    5 => "42.png",
+    6 => "68.png",
+    7 => "53.png",
+    8 => "48.png",
+    9 => "66-1.png",
+    10 => "22-1.png",
+    11 => "bg-2.png",
+    12 => "36-1.png",
+];
+
+// 獲取當前月份的小圖
+$selectedSmallImage = isset($smallImages[$month]) ? $smallImages[$month] : $smallImages[1];
+
+?>
+
+<div class="selected-image <?php echo "month-" . $month; ?>">
+    <img src="images/<?php echo $selectedSmallImage; ?>" alt="當前月份小圖">
 </div>
 
 </body>
