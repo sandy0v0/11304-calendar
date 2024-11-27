@@ -11,58 +11,19 @@
 
     body {
         text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
-        background-image: url('./images/001.png'); /*設定背景圖片*/
+        background-image: url('./images/00-1.png'); /*設定背景圖片*/
         background-size: cover;/*使圖片覆蓋整個背景*/
         background-position: center; /* 圖片置中 */
         background-repeat: no-repeat; /* 不重複顯示背景圖片 */
         background-attachment: fixed; /* 固定背景圖不隨捲動 */
         font-family: Arial, sans-serif; /* 設置整體字體樣式 */
         background-color: rgba(255, 255, 255, 0.9); /* 增加日曆的白色半透明背景 */
-    /* margin: 0; */
-    /* padding: 0; */
-    /* height: 100vh; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     }
-    /* 容器 */
-.container {
-    position: relative;
-    width: 70%;
-    height: 60%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; */
-}
-
-/* 毛玻璃效果層 */
-.glass-effect {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2); /* 半透明背景色 */
-    backdrop-filter: blur(1px); /* 毛玻璃效果 */
-    -webkit-backdrop-filter: blur(10px); /* 支援 Safari */
-    /*border: 1px solid rgba(255, 255, 255, 0.3);  邊框效果 */
-    border-radius: 15px; /* 圓角 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  陰影效果 */
-}
-/* 文字樣式 */
-h1, p {
-    margin: 0; /* 移除標題和段落的預設外邊距 */
-    padding: 0; /* 移除標題和段落的預設內邊距 */
-}
     
     h1 { /* 最上方抬頭 */
         color: lightcoral;
         text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); /* 添加陰影提高可讀性 */
+        margin:3px;
     }
 
     table { /* 目前 頭一區 / 身體星期標題一區 */
@@ -216,10 +177,10 @@ h1, p {
 
     .month { /* 頭區 的月份下拉選單  */
         color: white;
-        font-size: 33px;
+        font-size: 35px;
         background-color: rgba(255, 150, 113, 0.5);
         border-radius: 20px;
-        padding: 42px 20px;
+        padding: 48px 22px;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         cursor: pointer; /* 指標變為手形 */ 
@@ -236,9 +197,8 @@ h1, p {
     .robot-arm { /* 機器手臂的容器 */
         position: fixed;
         /* top: 40%; 將機器手臂位置40% */
-        bottom: 75px;
-        /*right: 460px;  從右側出現460px */
-        right: 120px;
+        bottom: 160px;
+        right: 410px;
         width: 110px;
         height: 220px;
         transform: translateY(-50%); /* 垂直居中 */
@@ -406,14 +366,14 @@ h1, p {
     .selected-image.month-1 img {
         width: 290px;
         bottom: -10px;  /* 距離底部 90px */
-        left: 15px; /* 距離左側 10px */
+        left: 30px; /* 距離左側 10px */
     }
 
     /* 2月的圖像位置 */
     .selected-image.month-2 img {
-        width: 310px;
+        width: 295px;
         bottom: 10px;  
-        left: 5px; 
+        left: 25px; 
         animation: swing2 2s infinite ease-in-out;
     }
 
@@ -421,7 +381,7 @@ h1, p {
     .selected-image.month-3 img {
         width: 310px;
         bottom: 5px;  
-        left: 5px; 
+        left: 25px; 
     }
 
     /* 4月的圖像位置 */
@@ -433,16 +393,16 @@ h1, p {
 
     /* 5月的圖像位置 */
     .selected-image.month-5 img {
-        width: 300px; 
+        width: 290px; 
         bottom: 20px;  
-        left: 10px; 
+        left: 30px; 
     }
 
     /* 6月的圖像位置 */
     .selected-image.month-6 img {
         width: 350px;
         bottom: 30px;  
-        left: -30px; 
+        left: 0px; 
         animation: swing1 2s infinite ease-in-out; 
     }
 
@@ -450,121 +410,107 @@ h1, p {
     .selected-image.month-7 img {
         width: 270px;
         bottom: 20px;  
-        left: 35px; 
+        left: 55px; 
     }
 
     /* 8月的圖像位置 */
     .selected-image.month-8 img {
-        width: 300px;
-        bottom: 30px;  
-        left: 20px; 
+        width: 280px;
+        bottom: 50px;  
+        left: 35px; 
     }
 
     /* 9月的圖像位置 */
     .selected-image.month-9 img {
         width: 350px;
         bottom: -5px;  
-        left: -30px; 
+        left: 10px; 
     }
 
     /* 10月的圖像位置 */
     .selected-image.month-10 img {
         width: 230px;
         bottom: 25px;  
-        left: 30px; 
+        left: 65px; 
     }
     
     /* 11月的圖像位置 */
     .selected-image.month-11 img {
         width: 250px;
         bottom: 25px;  
-        left: 25px; 
+        left: 60px; 
     }
 
     /* 12月的圖像位置 */
     .selected-image.month-12 img {
         width: 300px;
         bottom: 15px;  
-        left: 15px; 
+        left: 35px; 
     }
 
     /* 回首頁 */
-    a#home{
-    width: 80px;
-    height: 40px;
-    font-size: 15px; /*rem*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px #ccc;
-    top: 15px;
-    left: 15px;
-    border-radius: 15px;
-    z-index:999;
+    a#home {
+        width: 80px;
+        height: 40px;
+        font-size: 15px; /*rem*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px #ccc;
+        top: 15px;
+        left: 15px;
+        border-radius: 15px;
+        z-index:999;
     }
 
-    a#home:hover{
-    background-color: lightcoral;
-    color:white;
+    a#home:hover {
+        background-color: lightcoral;
+        color:white;
     }
 
-/* 農曆的基礎樣式 */
-.lunar-date {
-    font-size: 12px; 
-    color: dimgray;  
-    margin-top: 5px;
-    font-weight: bold;
-}
+    /* 農曆的基礎樣式 */
+    .lunar-date {
+        font-size: 12px; 
+        color: dimgray;  
+        margin-top: 5px;
+        font-weight: bold;
+    }
 
-/* 顯示農曆月份的樣式 */
-.lunar-month {
-    color: #D2691E; 
-    font-size: 14px; 
-    font-weight: normal;
-}
+    .zodiac {
+        font-size: 20px;
+        font-weight: bold;
+        color: darkorchid;
+        margin-top: 10px;
+        position: fixed;
+        bottom: 165px;
+        left: 305px;
+        width: 260px;
+        height: 140px;
+        transform: translateY(-50%); /* 垂直居中 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+    }
 
-/* 顯示農曆日期的樣式 */
-.lunar-day {
-    color: #32CD32; 
-    font-size: 12px;
-}
-
-/* 農曆日期的底部線條 */
-.lunar-date-box {
-    border-top: 1px solid #A9A9A9; /* 上邊框顏色 */
-    padding-top: 3px;
-}
-
-/* 當日期為假日（例如農曆新年等）時使用的樣式 */
-.lunar-holiday {
-    background-color: #FFD700; /* 黃金色背景 */
-    color: #800000; 
-    padding: 2px;
-    border-radius: 5px;
-}
-
-/* 當日期為特定節日（如聖誕節）時的樣式 */
-.lunar-festival {
-    color: #DC143C; /* 節日文字顏色 */
-    font-size: 14px;
-    font-weight: bold;
-}
-
-/* 當天的農曆顯示樣式 */
-.today-lunar {
-    background-color: #FFD700; /* 當日農曆背景 */
-    color: #000; 
-    padding: 3px;
-    border-radius: 50%;
-    text-align: center;
-}
+    .zodiac1 {
+        position: fixed;
+        top: 90px;
+        right: 285px;
+        width: 260px;
+        height: 260px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        z-index: 0;
+    }
 
 
 </style>
@@ -739,6 +685,24 @@ $zodiacs = ["🐭", "🐮", "🐯", "🐰", "🐉", "🐍", "🐴", "🐏", "�
 $zodiacIndex = ($year - 4) % 12;
 $zodiacName = $zodiacs[$zodiacIndex];
 
+// 星座資料
+$zodiacSigns = [
+    "1" => ["♑摩羯座 (12/22-01/19)", "♒水瓶座 (01/20-02/18)"],
+    "2" => ["♒水瓶座 (01/20-02/18)", "♓雙魚座 (02/19-03/20)"],
+    "3" => ["♓雙魚座 (02/19-03/20)", "♈牡羊座 (03/21-04/19)"],
+    "4" => ["♈牡羊座 (03/21-04/19)", "♉金牛座 (04/20-05/20)"],
+    "5" => ["♉金牛座 (04/20-05/20)", "♊雙子座 (05/21-06/20)"],
+    "6" => ["♊雙子座 (05/21-06/20)", "♋巨蟹座 (06/21-07/22)"],
+    "7" => ["♋巨蟹座 (06/21-07/22)", "♌獅子座 (07/23-08/22)"],
+    "8" => ["♌獅子座 (07/23-08/22)", "♍處女座 (08/23-09/22)"],
+    "9" => ["♍處女座 (08/23-09/22)", "♎天秤座 (09/23-01/22)"],
+    "10" => ["♎天秤座 (09/23-10/22)", "♏天蠍座 (10/23-11/21)"],
+    "11" => ["♏天蠍座 (10/23-11/21)", "♐射手座 (11/22-12/21)"],
+    "12" => ["♐射手座 (11/22-12/21)", "♑摩羯座 (12/22-01/19)"]
+];
+
+$currentZodiac = $zodiacSigns[$month];
+
 include 'lunar.php';
 // 使用 getLunarYearName 函數計算天干地支
 $lunarYearName = getLunarYearName($year);
@@ -802,15 +766,6 @@ $lunarYearName = getLunarYearName($year);
     <th>FRI &nbsp; 五</th>
     <th style='color:red'>SAT 六 ✿</th>
 </tr>
-
-<div class="robot-arm">
-        <div class="base">
-            <a href="?update=true">
-            <?php echo"{$zodiacName}<br>♪•♫<br>{$lunarYearName} ♫˚♪•" ?>
-        </div>
-        <!-- <div class="arm"></div> -->
-    </div>
-
 
 <?php
 
@@ -882,7 +837,19 @@ for($i=0;$i<6;$i++){
 ?>
 
 </table>
+
+<div class="robot-arm">
+        <div class="base">
+            <a href="?update=true">
+            <?php echo"{$zodiacName}<br>♪•♫<br>{$lunarYearName} ♫˚♪•" ?>
+        </div>
+        <!-- <div class="arm"></div> -->
 </div>
+
+<div class="zodiac">
+    <br><br><?= $currentZodiac[0]; ?> <br> <?= $currentZodiac[1]; ?> <br>
+</div>
+
 <?php
 date_default_timezone_set("Asia/Taipei"); // 設置台灣時區
 $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
@@ -929,6 +896,10 @@ $selectedSmallImage = isset($smallImages[$month]) ? $smallImages[$month] : $smal
 
 <div class="selected-image <?php echo "month-" . $month; ?>">
     <img src="images/<?php echo $selectedSmallImage; ?>" alt="當前月份小圖">
+</div>
+
+<div class="zodiac1">
+    <br><br><br><br>
 </div>
 
 </body>
