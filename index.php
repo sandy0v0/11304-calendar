@@ -10,26 +10,25 @@
    /*請在這裹撰寫你的CSS*/ 
 
     body {
-        text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
-        background-image: url('./images/00-1.png'); /*設定背景圖片*/
-        background-size: cover;/*使圖片覆蓋整個背景*/
-        background-position: center; /* 圖片置中 */
+        text-align: center ; 
+        background-image: url('./images/background.png'); 
+        background-size: cover;
+        background-position: center; 
         background-repeat: no-repeat; /* 不重複顯示背景圖片 */
         background-attachment: fixed; /* 固定背景圖不隨捲動 */
-        font-family: Arial, sans-serif; /* 設置整體字體樣式 */
-        background-color: rgba(255, 255, 255, 0.9); /* 增加日曆的白色半透明背景 */
+        font-family: Arial, sans-serif; 
+        background-color: rgba(255, 255, 255, 0.9); 
     }
     
     h1 { /* 最上方抬頭 */
         color: lightcoral;
-        text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); /* 添加陰影提高可讀性 */
+        text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); 
         margin:3px;
     }
 
     table { /* 目前 頭一區 / 身體星期標題一區 */
         width: 735px;
         height: 90px;
-        /* border-collapse:collapse; 使邊框合併 */
         margin:auto;        
         /* background: rgb(<?rand(50,250);?>,<?rand(50,250);?>,<?rand(50,250);?>); */
         background-color: rgba(255, 255, 255, 0.9); /* 增加日曆的白色半透明背景 */
@@ -37,7 +36,7 @@
     }
 
     th { /* 星期標題 */
-        font-size: 18px; /* 字體大小 */
+        font-size: 18px; 
         padding: 15px 0; /* 內邊距 */
     }
 
@@ -45,11 +44,11 @@
         width: 140px;
         height: 60px;
         font-weight: bold;
-        padding: 10px 10px; /* 單元格內的邊距 */
-        text-align:center; /* 文字居中 */
-        border:2px solid #999; /* 邊框顏色 */
-        border-radius: 25%;  /* 使日期框變圓形 */
-        font-size: 22px;  /* 調整日期框字體大小 */
+        padding: 10px 10px; 
+        text-align:center; 
+        border:2px solid #999; 
+        border-radius: 25%;  
+        font-size: 22px;  
         transition: transform 0.3s ease, background-color 0.3s ease;  /*添加動畫效果*/
         cursor: pointer; /* 指標變為手形 */ 
     }
@@ -73,7 +72,7 @@
     .today { /* 日曆中 當日 */
         background: lightblue; 
         color: white; 
-        font-weight:bolder; /* 加粗字體 */
+        font-weight:bolder; 
         text-shadow: 1.3px 1.3px 1px rgba(0, 0, 0, 0.5);
         font-size:1.5em;  /* em 字拉大的效果 */
     }
@@ -81,7 +80,7 @@
     .nav { /* 機器人 頭區 */
         width: 735px;
         margin:auto;
-        background-color: rgba(255, 255, 255, 0.5); /* 加入白色半透明背景以強調選單 */
+        background-color: rgba(255, 255, 255, 0.5); 
         border-radius: 8px;
         padding: 2px;
     }
@@ -94,17 +93,16 @@
     }
 
     .today-button { /* 頭區 的嘴巴 */
-        text-align: center ; /* 設定容器的樣式，使按鈕居中顯示 */
+        text-align: center ; 
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .today-link { /* 頭區 的嘴巴按鈕 */
-        padding: 8px 40px 8px; /* 按鈕的內邊距 */
+        padding: 8px 40px 8px; 
         background-color: rgba(255, 199, 95, 0.8); 
-        /*background: rgba(255, 150, 113, 0.5); */
-        color: white; /* 按鈕的文字顏色 */
+        color: white; 
         text-decoration: none; /* 取消超鏈接的下劃線 */
-        border-radius: 20px; /* 按鈕的圓角效果 */
+        border-radius: 20px; 
     }
 
     .today-link:hover,
@@ -122,7 +120,6 @@
         margin: auto;
         text-decoration: none;
         font-weight: bold;
-        /* transition: transform 0.3s ease, background-color 0.3s ease;  添加動畫效果 */
     }
     
     .nextMonth:hover { /* 滑鼠懸停在按鈕上的效果 */
@@ -136,25 +133,24 @@
     }
 
     .sp-date { /* 特別日期.農曆的國定假日 */
-        font-size: 12px; /* 文字大小 */
+        font-size: 12px; 
         color: chocolate; 
-        font-weight: bold; /* 使文字加粗 */
+        font-weight: bold; 
     }
 
     .holiday-text { /* 國定假日 */
         padding: bottom;
-        font-size: 14px; /* 國定假日的文字大小 */
+        font-size: 14px; 
         color: crimson; 
         /*font-style: italic;  讓文字傾斜 */
-        font-weight: bold; /* 使文字加粗 */
+        font-weight: bold; 
     }
 
     .nextYear { /* 頭區 的眼睛(下一年 ►►)  */
         color: #fff;
         background:lightcoral;
-        /* background: rgba(255, 199, 95, 0.8); */
-        border-radius: 50%; /* 設置為圓框 */
-        font-size: 24px; /* 調整大小 */
+        border-radius: 50%; 
+        font-size: 24px; 
         width: 50px;
         height: 50px;
         display: flex;
@@ -184,19 +180,18 @@
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         cursor: pointer; /* 指標變為手形 */ 
-        border: none; /* 取消邊框 */
+        border: none; 
     }    
 
-    .year { /* 頭區 中心(年份/生肖) */
+    .year { /* 頭區 中心(年份) */
         font-size: 36px; 
         color: lightgray; 
         font-weight: bold; 
         text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
     }
         
-    .robot-arm { /* 機器手臂的容器 */
+    .robot-arm { /* 機器手臂(生肖/天干地支)的容器 */
         position: fixed;
-        /* top: 40%; 將機器手臂位置40% */
         bottom: 160px;
         right: 410px;
         width: 110px;
@@ -208,7 +203,7 @@
         /*animation: move-arm 3s infinite ease-in-out;  添加晃動動畫 */
         }
     
-    .robot-arm .base { /* 機器手臂的頭 */
+    .robot-arm .base { /* 機器手臂(生肖/天干地支)的頭 */
         width: 75px;
         height: 75px;
         /* background-color: rgba(255, 150, 113, 0.5); */
@@ -218,7 +213,7 @@
         position: relative;
         font-size: 45px;
         color: burlywood; 
-        font-weight:bolder; /* 加粗字體 */
+        font-weight:bolder; 
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
         text-align: center;
         cursor: pointer;
@@ -231,7 +226,7 @@
         font-size: 16px;
     }
 
-    .base a { /* 機器手臂的頭 按鈕 */
+    .base a { /* 機器手臂的頭(生肖) 按鈕 */
         text-decoration: none;
         color: inherit;
     }
@@ -250,24 +245,24 @@
             transform: translateY(-50%) rotate(-5deg);
         }
         50% {
-            transform: translateY(-50%) rotate(5deg); /* 手臂擺動角度 */
+            transform: translateY(-50%) rotate(5deg); 
         }
     }
     
     #marquee-container { /* 跑馬燈效果區 */
         margin: 10px auto;
         width: 70%; 
-        background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+        background-color: rgba(255, 255, 255, 0.8); 
         border-radius: 10px;
         padding: 5px;
-        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
     }
 
     marquee { /* 跑馬燈效果 框內區 */
         color: lightcoral; 
-        font-size: 24px; /* 調整字體大小 */
-        font-weight: bold; /* 加粗字體 */
-        line-height: 1.5; /* 行高 */
+        font-size: 24px; 
+        font-weight: bold; 
+        line-height: 1.5; 
     }
     
     .current-time { /* 最下方 設置台灣目前時間 */
@@ -285,24 +280,16 @@
         text-decoration: none;
     }
 
-    .left-image { /*最左邊 小圖區 */
-        /* position: absolute;  固定在畫面左側 */
-        position: fixed; /* 固定位置 */
-        bottom: 75px;  /* 距離底部 90px */
-        right: 80px; /* 距離右側 335px */
-        /* top: 50%; 垂直置中 */
-        /*left: 0;  靠左對齊 */
-        /*transform: translateY(-50%); 調整垂直置中效果 */
-        /*z-index: 1;  確保圖片位於其他元素之上 */
+    .right-image { /*最右邊 小圖區 */
+        position: fixed; 
+        bottom: 75px;  
+        right: 80px; 
     }
 
-    .left-image img { /*最左邊 小圖設定  */
+    .right-image img { /*最右邊 小圖設定  */
         width: 250px; 
-        height: auto; /* 保持圖片比例 */
-        border: none; /* 去除邊框 */
-        /*border-radius: 10px;  如果需要圓角，視需求調整 */
-        /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  添加輕微陰影增強效果 */
-        /* animation: swing 2s infinite ease-in-out; */
+        height: auto; 
+        border: none; 
     }
 
     @keyframes swing { /* 小圖動畫 */
@@ -317,7 +304,7 @@
         }
     }
 
-    @keyframes swing1 { /* 小圖動畫 */
+    @keyframes swing1 { 
         0% {
             transform: rotate(-10deg);
         }
@@ -329,7 +316,7 @@
         }
     }
 
-    @keyframes swing2 { /* 小圖動畫 */
+    @keyframes swing2 { 
         0% {
             transform: rotate(25deg);
         }
@@ -341,32 +328,27 @@
         }
     }
 
+    /* 每月對應的小圖(最左邊) */
     .selected-image {        
-        /* position: absolute;  固定在畫面左側 */
-        position: fixed; /* 固定位置 */
-        bottom: -10px;  /* 距離底部 90px */
-        left: 25px; /* 距離左側 10px */
-        /* top: 50%; 垂直置中 */
-        /*left: 0;  靠左對齊 */
-        /*transform: translateY(-50%); 調整垂直置中效果 */
-        z-index: 10; /* 確保圖片位於其他元素之上 */
+        position: fixed; 
+        bottom: -10px;  
+        left: 25px; 
+        z-index: 10; 
 }
 
     .selected-image img {
         width: 300px; 
-        height: auto; /* 保持圖片比例 */
-        border: none; /* 去除邊框 */
-        /*border-radius: 10px;  如果需要圓角，視需求調整 */
-        /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  添加輕微陰影增強效果 */
+        height: auto; 
+        border: none; 
         animation: swing 2s infinite ease-in-out;
-        position: fixed; /* 固定位置 */
+        position: fixed; 
     }
 
     /* 1月的圖像位置 */
     .selected-image.month-1 img {
         width: 290px;
-        bottom: -10px;  /* 距離底部 90px */
-        left: 30px; /* 距離左側 10px */
+        bottom: -10px;  
+        left: 30px; 
     }
 
     /* 2月的圖像位置 */
@@ -483,6 +465,7 @@
         font-weight: bold;
     }
 
+    /* 星座顯示區 */
     .zodiac {
         font-size: 20px;
         font-weight: bold;
@@ -501,25 +484,15 @@
         border-radius: 50%;
     }
 
-    .zodiac1 {
-        position: fixed;
-        top: 90px;
-        right: 285px;
-        width: 260px;
-        height: 260px;
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 50%;
-        z-index: 0;
-    }
-
-
 </style>
 </head>
 <body>
 <h1>.⁎ .⁂ .⁎˙ ⁑ * 萬  年  曆  Perpetual calendar * ⁑ ˙⁎. ⁂. ⁎.  </h1> 
 
- <a id="home" href="../index.html">回目錄</a>
+<a id="home" href="../index.html">回目錄</a>
+
 <?php
+/*請在這裹撰寫你的萬年曆程式碼*/  
 // 定義跑馬燈訊息
 $marqueeMessages = [
     "✨種自己的花，愛自己的宇宙，在不完美的生活裡，找到閃亮亮的快樂✧(๑•̀ㅂ•́)و✧✨",
@@ -602,11 +575,8 @@ if (isset($_GET['update'])) {
         <?php echo $randomMessage; ?>
     </marquee>
 </div>
-<div class="container">
-<div class="glass-effect">
 
 <?php
-/*請在這裹撰寫你的萬年曆程式碼*/  
 date_default_timezone_set("Asia/Taipei"); // 設置為台灣時區
 
 if(isset($_GET['month'])){
@@ -704,7 +674,7 @@ $zodiacSigns = [
 $currentZodiac = $zodiacSigns[$month];
 
 include 'lunar.php';
-// 使用 getLunarYearName 函數計算天干地支
+// 計算天干地支
 $lunarYearName = getLunarYearName($year);
 ?>
 
@@ -757,7 +727,6 @@ $lunarYearName = getLunarYearName($year);
 
 <table>
 <tr>
-    <!-- <td></td> -->
     <th style='color:red'>✿ SUN 日</th>
     <th>MON &nbsp; 一</th>
     <th>TUE &nbsp; 二</th>
@@ -781,11 +750,9 @@ $lunar = new Lunar(); // 初始化農曆轉換類別
 // 逐行顯示每一天
 for($i=0;$i<6;$i++){
     echo "<tr>"; 
-    // echo "<td>";
-    // echo $i+1; //顯示週數
-    // echo "</td>";
+
     for($j=0;$j<7;$j++){
-        //echo "<td class='holiday'>";
+        
         // 計算這個格子中的日期
         $cell=$i*7+$j -$firstDayWeek;
         $theDayTime=strtotime("$cell days".$firstDay);
@@ -818,16 +785,6 @@ for($i=0;$i<6;$i++){
         echo "<br><span class='lunar-date'>{$lunarDate[1]}{$lunarDate[2]}</span>"; // 農曆月日
         }
 
-        //如果有特定日期程式撰寫
-        // if(isset($spDate[date("Y-m-d",$theDayTime)])){
-        //     echo "<br><span class='sp-date'>{$spDate[date("Y-m-d",$theDayTime)]}</span>";
-        // }
-
-        // //國定假日程式撰寫(如果想要改成不同顏色，要再上面新增CSS判斷)
-        // //目前是農曆的節日要再另外設計
-        // if(isset($holidays[date("m-d",$theDayTime)])){
-        //     echo "<br><span class='holiday-text'>{$holidays[date("m-d",$theDayTime)]}</span>";
-        // }
         echo "</td>";
         
     }
@@ -838,6 +795,7 @@ for($i=0;$i<6;$i++){
 
 </table>
 
+<!-- 生肖/天干地支顯示 -->
 <div class="robot-arm">
         <div class="base">
             <a href="?update=true">
@@ -846,6 +804,7 @@ for($i=0;$i<6;$i++){
         <!-- <div class="arm"></div> -->
 </div>
 
+<!-- 星座顯示區 -->
 <div class="zodiac">
     <br><br><?= $currentZodiac[0]; ?> <br> <?= $currentZodiac[1]; ?> <br>
 </div>
@@ -860,46 +819,40 @@ $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
     ٩(˶╹ꇴ╹˶)و 台灣日期：<?php echo $currentTime; ?> | 點選 (๑◕ܫ◕๑)ฅ | 獲取目前時間 ♪♪  
 </div>
 
-</div>
-
-<div class="left-image">
-    <img src="./images/11.png" alt="左圖1" />
-    <img src="./images/8-1-1.png" alt="左圖2" />
-</div>
-    
-
-    <?php
+<?php
 // 設定當前年份和月份
 $year = isset($_GET['year']) ? $_GET['year'] : date('Y');
 $month = isset($_GET['month']) ? $_GET['month'] : date('n');
 
 // 定義每月對應的小圖
 $smallImages = [
-    1 => "23-1.png",
-    2 => "69.png",
-    3 => "71.png",
-    4 => "30-1.webp",
-    5 => "42.png",
-    6 => "68.png",
-    7 => "53.png",
-    8 => "48.png",
-    9 => "66-1.png",
-    10 => "22-1.png",
-    11 => "bg-2.png",
-    12 => "36-1.png",
+    1 => "s1.png",
+    2 => "s2.png",
+    3 => "s3.png",
+    4 => "s4.webp",
+    5 => "s5.png",
+    6 => "s6.png",
+    7 => "s7.png",
+    8 => "s8.png",
+    9 => "s9.png",
+    10 => "s10.png",
+    11 => "s11.png",
+    12 => "s12.png",
 ];
 
 // 獲取當前月份的小圖
 $selectedSmallImage = isset($smallImages[$month]) ? $smallImages[$month] : $smallImages[1];
-
 ?>
 
+<!-- 顯示左方(月份)小圖 -->
 <div class="selected-image <?php echo "month-" . $month; ?>">
     <img src="images/<?php echo $selectedSmallImage; ?>" alt="當前月份小圖">
 </div>
 
-<div class="zodiac1">
-    <br><br><br><br>
+<!-- 顯示右方小圖 -->
+<div class="right-image">
+    <img src="./images/right-image1.png" alt="右圖1" />
+    <img src="./images/right-image2.png" alt="右圖2" />
 </div>
 
 </body>
