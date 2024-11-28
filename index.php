@@ -221,11 +221,6 @@
         display: inline-block;
     }
     
-    #marquee-container { /* 晃動動畫區 */
-        margin-top: 20px;
-        font-size: 16px;
-    }
-
     .base a { /* 機器手臂的頭(生肖) 按鈕 */
         text-decoration: none;
         color: inherit;
@@ -334,7 +329,7 @@
         bottom: -10px;  
         left: 25px; 
         z-index: 10; 
-}
+    }
 
     .selected-image img {
         width: 300px; 
