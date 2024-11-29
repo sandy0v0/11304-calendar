@@ -694,7 +694,7 @@ $lunarYearName = getLunarYearName($year);
                 <a href="index.php?year=<?=$prevYearMonth;?>&month=<?=$month;?>">◄◄</a>                              
             </td>
             <td class="year"
-            onclick="alert('⁎˙*✿*.⁎˙ (๑◕ܫ◕๑)ฅ | 感恩的心 (˶╹ꇴ╹˶)♡ 年年開心 | ✧*｡٩(ˊᗜˋ*)و✧*｡ .⁎˙* ✿--查詢年份，請按確定鍵後，點擊【 ◄◄ 】or【 ►► 】查詢~謝謝--✿')" 
+            onclick="alert('✿(๑◕ܫ◕๑)ฅ | 感恩的心 (˶╹ꇴ╹˶)♡ 年年開心 | ✧*｡٩(ˊᗜˋ*)و✧*｡ .⁎˙* ✿-查詢年份，請按確定鍵後，點擊【 ◄◄ 】or【 ►► 】查詢~謝謝-✿')" 
             style="font-size: 36px;">
                 <?php echo "{$year}年"; ?>
             </td>
