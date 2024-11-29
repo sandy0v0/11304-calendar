@@ -811,7 +811,7 @@ $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
 
 <!-- 顯示當前台灣時間 -->
 <div class="current-time">
-    ٩(˶╹ꇴ╹˶)و 台灣日期：<?php echo $currentTime; ?> | 點選 (๑◕ܫ◕๑)ฅ | 獲取目前時間 ♪♪  
+    ٩(˶╹ꇴ╹˶)و 台灣日期：<?php echo $currentTime; ?> | 點擊 (๑◕ܫ◕๑)ฅ | 獲取目前時間 ♪♪  
 </div>
 
 <?php
