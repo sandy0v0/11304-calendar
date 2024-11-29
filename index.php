@@ -82,7 +82,7 @@
         margin:auto;
         background-color: rgba(255, 255, 255, 0.5); 
         border-radius: 8px;
-        padding: 2px;
+        padding: 0px;
     }
 
     .nav td { /* 頭區的每個格子 */
@@ -192,7 +192,7 @@
         
     .robot-arm { /* 機器手臂(生肖/天干地支)的容器 */
         position: fixed;
-        bottom: 160px;
+        bottom: 150px;
         right: 410px;
         width: 110px;
         height: 220px;
@@ -245,11 +245,11 @@
     }
     
     #marquee-container { /* 跑馬燈效果區 */
-        margin: 10px auto;
+        margin: 5px auto;
         width: 70%; 
         background-color: rgba(255, 255, 255, 0.8); 
         border-radius: 10px;
-        padding: 5px;
+        padding: 3px;
         box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
     }
 
@@ -263,7 +263,7 @@
     .current-time { /* 最下方 設置台灣目前時間 */
         font-size: 22px;
         text-align: center;
-        margin: 25px;
+        margin: 15px;
         color: darkslateblue;
     }
 
@@ -277,7 +277,7 @@
 
     .right-image { /*最右邊 小圖區 */
         position: fixed; 
-        bottom: 75px;  
+        bottom: 55px;  
         right: 80px; 
     }
 
