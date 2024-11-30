@@ -479,6 +479,130 @@
         border-radius: 50%;
     }
 
+.custom-form {
+    /* background-color: #f9f9f9; */
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    /* display: inline-block; */
+    /* margin-bottom: 20px; */
+    position: fixed; 
+    left: 210px;
+    background-color: rgba(255, 255, 255, -0.1);
+    /* top: 200px; */
+}
+
+.custom-form form {
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    width: 90%;
+    max-width: 230px;
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    border: 0.5px solid aliceblue;
+    border-radius: 5px;
+    background-color: aliceblue;
+    left: 25px;
+}
+
+button {
+    padding: 3px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, -0.1);
+    color: rgba(255, 255, 255, -0.1);
+    /* color: aliceblue; */
+    border: none;
+    border-radius: 15px;
+    
+}
+
+button:hover {
+    background-color: orchid;
+    color: aliceblue;
+}
+
+.note-container { /* 便條容器樣式 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    position: fixed;
+    right: 25px;
+    width: 260px;
+}
+
+.note { /* 單個便條樣式 */
+    width: 250px;
+    padding: 8px 8px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, -0.1);
+    /* background-color: aliceblue; */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    text-align: left;
+
+    position: relative;
+    transition: box-shadow 0.3s ease;
+
+    word-wrap: break-word;
+    word-break: break-word;
+
+    /* position: fixed; 
+    right: 20px; */
+}
+
+/* 滑鼠懸停時的效果 */
+.note:hover {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 便條內容自動換行 */
+.note p {
+    word-wrap: break-word;
+    word-break: break-word;
+    margin: 3px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: darkgrey;
+}
+
+/* 編輯和刪除按鈕的樣式 */
+.note-action {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: none; /* 初始隱藏 */
+}
+
+/* 滑鼠懸停時顯示按鈕 */
+.note:hover .note-action {
+    display: inline-block;
+}
+
+/* 按鈕的樣式 */
+.note-action button {
+    background-color: #ff6f61;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.note-action button:hover {
+    background-color: #ff3b30;
+}
+
 </style>
 </head>
 <body>
@@ -671,6 +795,59 @@ $currentZodiac = $zodiacSigns[$month];
 include 'lunar.php';
 // 計算天干地支
 $lunarYearName = getLunarYearName($year);
+?>
+
+<?php
+$notesFile = 'notes.json';
+
+// 確保 JSON 文件存在
+if (!file_exists($notesFile)) {
+    file_put_contents($notesFile, json_encode([]));
+}
+
+// 讀取便條資料
+$notes = json_decode(file_get_contents($notesFile), true);
+?>
+
+<!-- 新增或編輯便條籤的表單 -->
+<div class="custom-form">
+<form method="post" action="save_note.php">
+    <textarea name="content" rows="5" placeholder="今天微笑了嗎~記下值得感謝的事情~"></textarea>
+    <input type="hidden" name="id" value="">
+    <button type="submit">儲存起來 ✿ 明天也是美好的一天</button>
+</form>
+</div>
+
+<!-- 顯示現有便條 -->
+<div class="note-container">
+    <?php foreach ($notes as $id => $note): ?>
+        <div class="note">
+            <p><?php echo htmlspecialchars($note['content']); ?></p>
+            <!-- 編輯按鈕 -->
+            <form method="post" action="index.php" style="display:inline;">
+                <input type="hidden" name="edit_id" value="<?php echo $id; ?>">
+                <button type="submit">編輯</button>
+            </form>
+            <!-- 刪除按鈕 -->
+            <form method="post" action="delete_note.php" style="display:inline;">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <button type="submit">刪除</button>
+            </form>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<?php
+// 如果點擊了編輯，顯示編輯表單
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_id'])) {
+    $editId = $_POST['edit_id'];
+    $editContent = $notes[$editId]['content'];
+    echo '<form method="post" action="save_note.php">';
+    echo '<textarea name="content" rows="5">' . htmlspecialchars($editContent) . '</textarea>';
+    echo '<input type="hidden" name="id" value="' . htmlspecialchars($editId) . '">';
+    echo '<button type="submit">儲存變更</button>';
+    echo '</form>';
+}
 ?>
 
 <div class='nav'>
