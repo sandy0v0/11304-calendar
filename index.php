@@ -73,7 +73,7 @@
         background: lightblue; 
         color: white; 
         font-weight:bolder; 
-        text-shadow: 1.3px 1.3px 1px rgba(0, 0, 0, 0.5);
+        text-shadow: 1.3px 1.3px 2px rgba(0, 0, 0.3, 0.3);
         font-size:1.5em;  /* em 字拉大的效果 */
     }
 
@@ -192,8 +192,8 @@
         
     .robot-arm { /* 機器手臂(生肖/天干地支)的容器 */
         position: fixed;
-        bottom: 150px;
-        right: 410px;
+        bottom: 100px;
+        right: 335px;
         width: 110px;
         height: 220px;
         transform: translateY(-50%); /* 垂直居中 */
@@ -277,8 +277,8 @@
 
     .right-image { /*最右邊 小圖區 */
         position: fixed; 
-        bottom: 55px;  
-        right: 80px; 
+        bottom: 5px;  
+        right: 5px; 
     }
 
     .right-image img { /*最右邊 小圖設定  */
@@ -339,94 +339,81 @@
         position: fixed; 
     }
 
-    /* 1月的圖像位置 */
-    .selected-image.month-1 img {
+    .selected-image.month-1 img { /* 1月的圖像位置 */
         width: 290px;
         bottom: -10px;  
         left: 30px; 
     }
-
-    /* 2月的圖像位置 */
-    .selected-image.month-2 img {
+ 
+    .selected-image.month-2 img { /* 2月的圖像位置 */
         width: 295px;
         bottom: 10px;  
         left: 25px; 
         animation: swing2 2s infinite ease-in-out;
     }
 
-    /* 3月的圖像位置 */
-    .selected-image.month-3 img {
+    .selected-image.month-3 img { /* 3月的圖像位置 */
         width: 310px;
         bottom: 5px;  
         left: 25px; 
     }
 
-    /* 4月的圖像位置 */
-    .selected-image.month-4 img {
+    .selected-image.month-4 img { /* 4月的圖像位置 */
         width: 230px;
         bottom: 15px;  
         left: 50px; 
     }
 
-    /* 5月的圖像位置 */
-    .selected-image.month-5 img {
+    .selected-image.month-5 img { /* 5月的圖像位置 */
         width: 290px; 
         bottom: 20px;  
         left: 30px; 
     }
 
-    /* 6月的圖像位置 */
-    .selected-image.month-6 img {
+    .selected-image.month-6 img { /* 6月的圖像位置 */
         width: 350px;
         bottom: 30px;  
         left: 0px; 
         animation: swing1 2s infinite ease-in-out; 
     }
 
-    /* 7月的圖像位置 */
-    .selected-image.month-7 img {
+    .selected-image.month-7 img { /* 7月的圖像位置 */
         width: 270px;
         bottom: 20px;  
         left: 55px; 
     }
 
-    /* 8月的圖像位置 */
-    .selected-image.month-8 img {
+    .selected-image.month-8 img { /* 8月的圖像位置 */
         width: 280px;
         bottom: 50px;  
         left: 35px; 
     }
 
-    /* 9月的圖像位置 */
-    .selected-image.month-9 img {
+    .selected-image.month-9 img { /* 9月的圖像位置 */
         width: 350px;
         bottom: -5px;  
         left: 10px; 
     }
 
-    /* 10月的圖像位置 */
-    .selected-image.month-10 img {
+    .selected-image.month-10 img { /* 10月的圖像位置 */
         width: 230px;
         bottom: 25px;  
         left: 65px; 
     }
     
-    /* 11月的圖像位置 */
-    .selected-image.month-11 img {
+    .selected-image.month-11 img { /* 11月的圖像位置 */
         width: 250px;
         bottom: 25px;  
         left: 60px; 
     }
 
-    /* 12月的圖像位置 */
-    .selected-image.month-12 img {
+    .selected-image.month-12 img { /* 12月的圖像位置 */
         width: 300px;
         bottom: 15px;  
         left: 35px; 
     }
 
-    /* 回首頁 */
-    a#home {
+    a#home { /* 回首頁 */
         width: 80px;
         height: 40px;
         font-size: 15px; /*rem*/
@@ -452,16 +439,14 @@
         color:white;
     }
 
-    /* 農曆的基礎樣式 */
-    .lunar-date {
+    .lunar-date { /* 農曆的基礎樣式 */
         font-size: 12px; 
         color: dimgray;  
         margin-top: 5px;
         font-weight: bold;
     }
 
-    /* 星座顯示區 */
-    .zodiac {
+    .zodiac { /* 星座顯示區 */
         font-size: 20px;
         font-weight: bold;
         color: darkorchid;
@@ -479,129 +464,95 @@
         border-radius: 50%;
     }
 
-.custom-form {
-    /* background-color: #f9f9f9; */
-    padding: 10px;
-    /* border: 1px solid #ccc; */
-    /* border-radius: 5px; */
-    /* display: inline-block; */
-    /* margin-bottom: 20px; */
-    position: fixed; 
-    left: 210px;
-    background-color: rgba(255, 255, 255, -0.1);
-    /* top: 200px; */
-}
+    .custom-form { /* 左上新增感恩記事區最外層容器 */ 
+        /* display: inline-block; */
+        position: fixed; 
+        background-color: rgba(255, 255, 255, 0);
+        padding: 10px;
+        left: 300px;
+    }
 
-.custom-form form {
-    margin: 0;
-    padding: 0;
-}
+    .custom-form form { /* 新增感恩記事區容器 */
+        margin: 0;
+        padding: 0;
+        width: 255px;
+    }
 
-textarea {
-    width: 90%;
-    max-width: 230px;
-    height: 60px;
-    padding: 10px;
-    margin-bottom: 5px;
-    font-size: 14px;
-    border: 0.5px solid aliceblue;
-    border-radius: 5px;
-    background-color: aliceblue;
-    left: 25px;
-}
+    textarea { /* 新增記事/編輯區 內容 */
+        width: 250px;
+        max-width: 255px;
+        height: 45px;
+        padding: 10px;
+        margin-bottom: 5px;
+        font-size: 15px;
+        /* border: 0.3px solid aliceblue; */
+        border: none;
+        border-radius: 5px;
+        left: 25px;
+        background-color: rgba(255, 255, 255, 0);
+    }
 
-button {
-    padding: 3px 15px;
-    font-size: 15px;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, -0.1);
-    color: rgba(255, 255, 255, -0.1);
-    /* color: aliceblue; */
-    border: none;
-    border-radius: 15px;
-    
-}
+    button { /* 感恩記事區-所有按鈕設定 */
+        padding: 0px 15px;
+        font-size: 15px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgba(255, 255, 255, 0);
+        border: none;
+        border-radius: 15px;
+    }
 
-button:hover {
-    background-color: orchid;
-    color: aliceblue;
-}
+    button:hover {
+        background-color: orchid;
+        color: aliceblue;
+    }
 
-.note-container { /* 便條容器樣式 */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
-    position: fixed;
-    right: 25px;
-    width: 260px;
-}
+    .note-container { /* 顯示記事區-容器樣式 */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        position: fixed;
+        right: 25px;
+        width: 250px;
+        top: 55px;
+    }
 
-.note { /* 單個便條樣式 */
-    width: 250px;
-    padding: 8px 8px;
-    /* border: 1px solid #ccc; */
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, -0.1);
-    /* background-color: aliceblue; */
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
-    text-align: left;
+    .note { /* 顯示記事區-單個記事樣式 */
+        width: 250px;
+        padding: 0px 8px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0);
+        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+        text-align: left;
+        position: relative;
+        transition: box-shadow 0.3s ease;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
 
-    position: relative;
-    transition: box-shadow 0.3s ease;
+    .note:hover { /* 滑鼠懸停時的效果 */
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
 
-    word-wrap: break-word;
-    word-break: break-word;
+    .note p { /* 記事內容自動換行 */
+        word-wrap: break-word;
+        word-break: break-word;
+        margin: 0px;
+        font-size: 15px;
+        line-height: 1.5;
+        color: darkgrey;
+    }
 
-    /* position: fixed; 
-    right: 20px; */
-}
-
-/* 滑鼠懸停時的效果 */
-.note:hover {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* 便條內容自動換行 */
-.note p {
-    word-wrap: break-word;
-    word-break: break-word;
-    margin: 3px;
-    font-size: 15px;
-    line-height: 1.5;
-    color: darkgrey;
-}
-
-/* 編輯和刪除按鈕的樣式 */
-.note-action {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    display: none; /* 初始隱藏 */
-}
-
-/* 滑鼠懸停時顯示按鈕 */
-.note:hover .note-action {
-    display: inline-block;
-}
-
-/* 按鈕的樣式 */
-.note-action button {
-    background-color: #ff6f61;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 5px;
-}
-
-.note-action button:hover {
-    background-color: #ff3b30;
-}
+    .form-position { /* 編輯區設定 */
+        position: absolute;
+        width: 250px;
+        top: 115px;
+        left: 20px;
+        border: none;
+    }
 
 </style>
 </head>
@@ -618,7 +569,7 @@ $marqueeMessages = [
     "✿ 每個人的花期不同，不必焦慮有人比你提前擁有！ก็ʕ•͡ᴥ•ʔก้ ✿",
     "遺憾和失去，是我們要面臨的課題，睡前原諒一切，醒來不問過往，珍惜所有的不期而遇，看淡所有的不辭而別！(๑•́＿•̀๑) ",
     "有人懂你奇奇怪怪，有人陪你可可愛愛 ╭(●╹∀╹●)╯╰(●•◡•●)╮",
-    "比起被圍觀，悄悄努力或許更踏實！٩(๑•̀ㅂ•́๑)۶",
+    "比起被圍觀，悄悄努力或許更踏實；就算沒有鮮花和掌聲，就算不會閃閃發光，也要一直堅持下去，永遠做自己的忠實觀眾！٩(๑•̀ㅂ•́๑)۶",
     "用心生活，每天都是美好的一天！٩(˶╹ꇴ╹˶)و ",
     "凡是發生皆有利於你，一切都是最好的安排！٩(๑•̀ㅂ•́๑)۶",
     "你不用一開始就很厲害，但要開始才有辦法很厲害 ＼＼\\٩( 'ω' )و //／／",
@@ -626,7 +577,7 @@ $marqueeMessages = [
     "聰明是一種天賦，而善良是一種選擇 （๑ • ‿ • ๑ ）",
     "別在乎別人做什麼；做得比自己好，每天突破自己的紀錄，你就是一位成功者！ ᕦ(ò_óˇ)ᕤ",
     "不要為成功而努力，要為做一個有價值的人而努力，人只有在覺得「自己有價值」時，才會感受到「貢獻感」，才能夠擁有勇氣！ (๑╹◡╹๑)",
-    "如果你想得到從未擁有的東西，你就得去做從未做過的事 ヽ(・×・´)ゞ",
+    "如果你想得到從未擁有的東西，你就得去做從未做過的事；人這一輩子，沒有白學的東西，也沒有白吃的苦，總有一天都會派上用場 ヽ(・×・´)ゞ",
     "成功，不是你所站的位置，而是你要去的方向 ┌|◎o◎|┘",
     "一個真正快樂的人，是那種即使繞道而行也不忘享受風景的人 (((o(*ﾟ▽ﾟ*)o)))",
     "知人者智，自知者明；勝人者有力，自勝者強 (´⊙ω⊙`)",
@@ -635,7 +586,7 @@ $marqueeMessages = [
     "世界上對勇氣的最大考驗，是忍受失敗而不喪失信心!! ฅ(๑*д*๑)ฅ",
     "只有你學會把自己已有的成績都歸零，才能騰出空間去接納更多的新東西，如此才能使自己不斷的超越自己 (╯✧∇✧)╯",
     "每個人都有潛在的能量，只是很容易被習慣所掩蓋，被時間所迷離，被惰性所消磨 (๑¯∀¯๑)",
-    "人生的價值，並不是用時間，而是用深度去衡量的 (´◉‿◉｀)",
+    "人生的價值，並不是用時間，而是用深度去衡量的；人做不到十全十美，那就儘量獨一無二 (´◉‿◉｀)",
     "簡單生活，知足常樂，才是幸福的真諦 ヾ(´︶`*)ﾉ♬",
     "如果不嘗試，你永遠不會知道結果 If you don't try, you'll never know. (•ㅂ•)/",
     "生活中沒有什麼比真誠的微笑更能打動人心 (◍•ᴗ•◍)ゝ",
@@ -646,10 +597,10 @@ $marqueeMessages = [
     "世界上最棒和最美好的事物是看不見也摸不著的，必須要用心去感受 (♡˙︶˙♡)",
     "永遠保持開放的心態和一顆富有同情心的心 (◕ܫ◕)",
     "對短期事物採取殘酷的誠實，對長期事物則保持樂觀和信心 ( ◕‿‿◕ )",
-    "人生就像騎單車，要保持平衡，就必須一直向前 ε=ε=ヾ(;ﾟдﾟ)/",
+    "人生就像騎單車，要保持平衡，就必須一直向前；即使我們走得再慢，也比站在原地更接近目標 ε=ε=ヾ(;ﾟдﾟ)/",
     "成功的花，人們只驚羨她現時的明艷，然而當初她的芽兒，卻浸透了奮鬥的淚泉 (❀╹◡╹)",
     "每一次創傷都是一次成熟，每一次失去都是一次獲得 (´-ι_-｀)",
-    "即使我們走得再慢，也比站在原地更接近目標 (๑´ㅁ`)",
+    "只要你認為對的事，你就只管去堅持，剩下的就交給時間 (๑´ㅁ`)",
     "用平和的心態面對一切，才能從容不迫 (=´ω`=)",
     "勇敢不是沒有恐懼，而是帶著恐懼依然前行 ┌( ºΔº )┘",
     "與其抱怨，不如改變；與其等待，不如行動；一切偉大的行動和思想，都有一個微不足道的開始 (｡•ㅅ•｡)ﾉ ",
@@ -812,7 +763,7 @@ $notes = json_decode(file_get_contents($notesFile), true);
 <!-- 新增或編輯便條籤的表單 -->
 <div class="custom-form">
 <form method="post" action="save_note.php">
-    <textarea name="content" rows="5" placeholder="今天微笑了嗎~記下值得感謝的事情~"></textarea>
+    <textarea name="content" rows="5" placeholder="今天微笑了嗎~ 記下值得感謝的事~ 點擊↓儲存╭(●╹∀╹●)╯╰(●•◡•●)╮~"></textarea>
     <input type="hidden" name="id" value="">
     <button type="submit">儲存起來 ✿ 明天也是美好的一天</button>
 </form>
@@ -826,12 +777,12 @@ $notes = json_decode(file_get_contents($notesFile), true);
             <!-- 編輯按鈕 -->
             <form method="post" action="index.php" style="display:inline;">
                 <input type="hidden" name="edit_id" value="<?php echo $id; ?>">
-                <button type="submit">編輯</button>
+                <button type="submit">✿ 編輯 ✿</button>
             </form>
             <!-- 刪除按鈕 -->
             <form method="post" action="delete_note.php" style="display:inline;">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <button type="submit">刪除</button>
+                <button type="submit">✿ 刪除 ✿</button>
             </form>
         </div>
     <?php endforeach; ?>
@@ -842,10 +793,10 @@ $notes = json_decode(file_get_contents($notesFile), true);
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_id'])) {
     $editId = $_POST['edit_id'];
     $editContent = $notes[$editId]['content'];
-    echo '<form method="post" action="save_note.php">';
+    echo '<form method="post" action="save_note.php" class="form-position">';
     echo '<textarea name="content" rows="5">' . htmlspecialchars($editContent) . '</textarea>';
     echo '<input type="hidden" name="id" value="' . htmlspecialchars($editId) . '">';
-    echo '<button type="submit">儲存變更</button>';
+    echo '<button type="submit">✿ 儲存變更 ✿</button>';
     echo '</form>';
 }
 ?>
@@ -1024,7 +975,7 @@ $selectedSmallImage = isset($smallImages[$month]) ? $smallImages[$month] : $smal
 <!-- 顯示右方小圖 -->
 <div class="right-image">
     <img src="./images/right-image1.png" alt="右圖1" />
-    <img src="./images/right-image2.png" alt="右圖2" />
+    <img src="./images/right-image02.png" alt="右圖2" />
 </div>
 
 </body>
