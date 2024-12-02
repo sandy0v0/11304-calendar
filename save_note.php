@@ -1,26 +1,21 @@
 <?php
-$notesFile = 'notes.json';
-
-// 確保 JSON 文件存在
-if (!file_exists($notesFile)) {
-    file_put_contents($notesFile, json_encode([]));
-}
-
-// 讀取現有便條資料
-$notes = json_decode(file_get_contents($notesFile), true);
+require 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['id'] ?: uniqid(); // 如果沒有 ID，生成新 ID
     $content = $_POST['content'];
+    $id = $_POST['id'] ?? null;
 
-    // 新增或更新便條
-    $notes[$id] = ['content' => $content];
+    if ($id) {
+        // 編輯便條
+        $stmt = $pdo->prepare("UPDATE notes SET content = :content WHERE id = :id");
+        $stmt->execute([':content' => $content, ':id' => $id]);
+    } else {
+        // 新增便條
+        $stmt = $pdo->prepare("INSERT INTO notes (content) VALUES (:content)");
+        $stmt->execute([':content' => $content]);
+    }
 
-    // 儲存回 JSON 文件
-    file_put_contents($notesFile, json_encode($notes, JSON_PRETTY_PRINT));
+    header('Location: index.php');
+    exit();
 }
-
-// 回到主畫面
-header("Location: index.php");
-exit;
 ?>

@@ -468,8 +468,8 @@
         /* display: inline-block; */
         position: fixed; 
         background-color: rgba(255, 255, 255, 0);
-        padding: 10px;
-        left: 300px;
+        padding: 5px;
+        left: 305px;
     }
 
     .custom-form form { /* 新增感恩記事區容器 */
@@ -749,39 +749,35 @@ $lunarYearName = getLunarYearName($year);
 ?>
 
 <?php
-$notesFile = 'notes.json';
-
-// 確保 JSON 文件存在
-if (!file_exists($notesFile)) {
-    file_put_contents($notesFile, json_encode([]));
-}
+require 'db.php';
 
 // 讀取便條資料
-$notes = json_decode(file_get_contents($notesFile), true);
+$stmt = $pdo->query("SELECT * FROM notes ORDER BY created_at DESC");
+$notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!-- 新增或編輯便條籤的表單 -->
+<!-- 新增便條表單 -->
 <div class="custom-form">
-<form method="post" action="save_note.php">
-    <textarea name="content" rows="5" placeholder="今天微笑了嗎~ 記下值得感謝的事~ 點擊↓儲存╭(●╹∀╹●)╯╰(●•◡•●)╮~"></textarea>
-    <input type="hidden" name="id" value="">
-    <button type="submit">儲存起來 ✿ 明天也是美好的一天</button>
-</form>
+    <form method="post" action="save_note.php">
+        <textarea name="content" rows="5" placeholder="今天微笑了嗎😊記下值得感謝的事~點↓儲存╭(●╹∀╹●)╯╰(●•◡•●)╮~"></textarea>
+        <input type="hidden" name="id" value="">
+        <button type="submit">儲存起來 ✿ 明天也是美好的一天</button>
+    </form>
 </div>
 
-<!-- 顯示現有便條 -->
+<!-- 顯示便條 -->
 <div class="note-container">
-    <?php foreach ($notes as $id => $note): ?>
+    <?php foreach ($notes as $note): ?>
         <div class="note">
             <p><?php echo htmlspecialchars($note['content']); ?></p>
             <!-- 編輯按鈕 -->
             <form method="post" action="index.php" style="display:inline;">
-                <input type="hidden" name="edit_id" value="<?php echo $id; ?>">
+                <input type="hidden" name="edit_id" value="<?php echo $note['id']; ?>">
                 <button type="submit">✿ 編輯 ✿</button>
             </form>
             <!-- 刪除按鈕 -->
             <form method="post" action="delete_note.php" style="display:inline;">
-                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <input type="hidden" name="id" value="<?php echo $note['id']; ?>">
                 <button type="submit">✿ 刪除 ✿</button>
             </form>
         </div>
@@ -792,7 +788,10 @@ $notes = json_decode(file_get_contents($notesFile), true);
 // 如果點擊了編輯，顯示編輯表單
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_id'])) {
     $editId = $_POST['edit_id'];
-    $editContent = $notes[$editId]['content'];
+    $stmt = $pdo->prepare("SELECT content FROM notes WHERE id = :id");
+    $stmt->execute([':id' => $editId]);
+    $editContent = $stmt->fetchColumn();
+
     echo '<form method="post" action="save_note.php" class="form-position">';
     echo '<textarea name="content" rows="5">' . htmlspecialchars($editContent) . '</textarea>';
     echo '<input type="hidden" name="id" value="' . htmlspecialchars($editId) . '">';
