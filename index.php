@@ -726,6 +726,11 @@ $zodiacs = ["🐭", "🐮", "🐯", "🐰", "🐉", "🐍", "🐴", "🐏", "�
 $zodiacIndex = ($year - 4) % 12;
 $zodiacName = $zodiacs[$zodiacIndex];
 
+// 設定當前年份和月份
+$year = isset($_GET['year']) ? $_GET['year'] : date('Y');
+// 使用 intval() 去除前導零
+$month = isset($_GET['month']) ? intval($_GET['month']) : date('n');
+
 // 星座資料
 $zodiacSigns = [
     "1" => ["♑摩羯座 (12/22-01/19)", "♒水瓶座 (01/20-02/18)"],
@@ -943,9 +948,6 @@ $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
 </div>
 
 <?php
-// 設定當前年份和月份
-$year = isset($_GET['year']) ? $_GET['year'] : date('Y');
-$month = isset($_GET['month']) ? $_GET['month'] : date('n');
 
 // 定義每月對應的小圖
 $smallImages = [
