@@ -948,7 +948,6 @@ $currentTime = date("Y-m-d -l- H:i:s"); // 取得目前日期與時間
 </div>
 
 <?php
-
 // 定義每月對應的小圖
 $smallImages = [
     1 => "s1.png",
